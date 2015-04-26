@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Intro to R for the C# Developer</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Intro to R for the C# Developer">
+  <meta name="author" content="Elizabeth Groom">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Intro to R for the C# Developer</h1>
+    <h2>Use the Arrow keys to navigate</h2>
+    <p>Elizabeth Groom<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>About me</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Elizabeth Groom
+Software Engineer Cartegraph in Dubuque since 2003</p>
+
+<p>eamil me: <a href="mailto:eagroom@yahoo.com">eagroom@yahoo.com</a><br>
+find this presentation on github at: <a href="https://github.com/eagroom/IntroToRPresentation">https://github.com/eagroom/IntroToRPresentation</a>  </p>
+
+<p><code>presentaiton built using slidfy in R</code> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Why this is important</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Consider the case study presented by Keith Baggerly <a href="http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/">The Anil Potti Story</a></p>
+
+<p>&quot;Intuition in high through put biology is poor&quot; Keith Baggerly </p>
+
+<p>Article: &quot;Genomic signutres to guide the use of chemotherapeutics in the treat of Cancer.&quot;
+  Auther: Potti et al (2006), 
+    Magizine: Nature Medicine, 12:1294-1300</p>
+
+<p>The idea is they developed a tool that can be usedd to predict weather a patient will respond to cheomtherpies by knowing What drugs are most effecitve againast which cells.  </p>
+
+<p><b>Amazing!</b></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Why Cont.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This was very exicting to M.D. Anderson who asked Baggerly&#39;s group to evaluate the Potti group&#39;s tools for predicting whether given patients would respond to different chemotherapies</p>
+
+<p>What Baggerly found was poor data anyslis as several steps along the way.  Easy things like mis-labeling of data.  But this caused patients to not get the drugs that it is predicted their cancer would respond best to!</p>
+
+<p>&quot;Intuition in high through put biology is poor&quot; in other words... we need impartial enigeers who care deeply about the process and the math data is currated through so that the doctors can genticis can learn factual things from the data.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>What is R</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>R is a system for statistical computation and graphics. It consists of a language <code>plus a run-time environment with graphics</code>, a debugger, access to certain system functions, and the ability to run programs stored in script files.</p></li>
+<li><p>R is a dialect of the S language.</p></li>
+<li><p>S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)</p></li>
+<li><p>[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.&quot; John Chambers</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>What is R Cont.</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li><p>In 1991 Ross Ihaka and Robert Gentleman created R</p></li>
+<li><p>Runs on almost any standard computing platform/OS (even on the PlayStation 3)</p></li>
+</ul>
+
+<h2>* Frequent releases (annual + bugfix releases); active development.</h2>
+</blockquote>
+
+<h2>The Tools</h2>
+
+<ul>
+<li><p>R comes with an IDE.  Its not bad.</p></li>
+<li><p>Recommend RStudio. It&#39;s <code>free</code> and includes alot of great features like syntax highlight, auto compltion and integrated help.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Varible assignment</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">x&lt;- 1
+</code></pre>
+
+<p>The assignmnet operator is an &quot;&lt;-&quot;.  You can read it as &quot;x get&#39;s 1</p>
+
+<pre><code class="r">1 -&gt; x #is also valid
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>Two more ways to Assign varibles</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol class = "build incremental">
+<li>&quot;=&quot;.  Works in &quot;most&quot; contexts</li>
+</ol>
+
+<pre><code class="r">x = 1
+</code></pre>
+
+<ol class = "build incremental">
+<li>assign function</li>
+</ol>
+
+<pre><code class="r">assign(&quot;x&quot;, 1)
+</code></pre>
+
+<blockquote>
+<p>This leads me to the first thing that i learned the hard way about R. <code>There are at least 3 ways to do any one thing in R and thye work in &quot;most&quot; context.</code></p>
+</blockquote>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Auto print</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To print out our value of x:</p>
+
+<pre><code class="r">x&lt;- 10
+x
+</code></pre>
+
+<pre><code>## [1] 10
+</code></pre>
+
+<hr>
+
+<h2>vectors</h2>
+
+<p>Notice how X prints out : [1] 10</p>
+
+<p>The simplest such structure is the numeric vector. The number in brackets denotes the number of items in the vector.  </p>
+
+<p>We can check the vertor type with the funciton class</p>
+
+<pre><code class="r">x
+</code></pre>
+
+<pre><code>## [1] 10
+</code></pre>
+
+<pre><code class="r">class(x)
+</code></pre>
+
+<pre><code>## [1] &quot;numeric&quot;
+</code></pre>
+
+<p>R has five basic or &quot;atomic&quot; classes of objects:</p>
+
+<ul>
+<li>character</li>
+<li>numeric (real numbers)</li>
+<li>integer</li>
+<li>complex</li>
+<li>logical (True/False)</li>
+</ul>
+
+<p>A vector can only contain objects of the same class</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Data frames</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>install.packages(&quot;devtools&quot;)
+library(devtools)
+#install_github(&quot;slidify&quot;, &quot;ramnathv&quot;)
+#install_github(&quot;slidifyLibraries&quot;, &quot;ramnathv&quot;)
+library(slidify)</p>
+
+<h2>slidify(&quot;index.Rmd&quot;)</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='About me'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Why this is important'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Why Cont.'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='What is R'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='What is R Cont.'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Varible assignment'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='Two more ways to Assign varibles'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Auto print'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Data frames'>
+         9
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
