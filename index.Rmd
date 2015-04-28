@@ -1,8 +1,8 @@
 ---
 title       : Intro to R for the C# Developer
-subtitle    : Use the Arrow keys to navigate
+subtitle    :  (Use arrow keys to navigate)
 author      : Elizabeth Groom
-job         : 
+job         : Software Engineer at Cartegraph\Data enthusist
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
@@ -10,6 +10,7 @@ widgets     : []            # {mathjax, quiz, bootstrap}
 mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
+
 
 ## About me
 
@@ -27,7 +28,7 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 
 Consider the case study presented by Keith Baggerly [The Anil Potti Story] (http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/)
 
-"Intuition in high through put biology is poor" Keith Baggerly 
+"Intuition in high through put biology is poor" -Keith Baggerly 
 
 Article: "Genomic signutres to guide the use of chemotherapeutics in the treat of Cancer."
   Auther: Potti et al (2006), 
@@ -57,17 +58,18 @@ What Baggerly found was poor data anyslis as several steps along the way.  Easy 
 
 > * S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)
 
-> * [W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important." John Chambers
+> * "[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important." John Chambers
 
 ---
 
 ## What is R Cont.
 
-> * In 1991 Ross Ihaka and Robert Gentleman created R
+* In 1991 Ross Ihaka and Robert Gentleman created R
 
-> * Runs on almost any standard computing platform/OS (even on the PlayStation 3)
+* Runs on almost any standard computing platform/OS (even on the PlayStation 3)
 
-> * Frequent releases (annual + bugfix releases); active development.
+* Frequent releases (annual + bugfix releases); active development.
+
 ---
 
 ## The Tools
@@ -123,7 +125,7 @@ x
 
 Notice how X prints out : [1] 10
 
-The simplest such structure is the numeric vector. The number in brackets denotes the number of items in the vector.  
+The simplest structure in R is the numeric vector. The number in brackets denotes the number of items in the vector.  
 
 We can check the vertor type with the funciton class
 
@@ -144,7 +146,66 @@ A vector can only contain objects of the same class
 
 ---
 
+## Data frames - The most useful object
+
+A data rame for all intents nad purposes in a table.
+> * Each columns is a vecotr of the same type, but each column can be differnt
+> * Each column has the same length
+> * Columns can have labels
+Lets Check out one of the the sample Data sets in R: mtCars
+
+---
 ## Data frames
+
+Data Frames have some helpful functions to help you get to know your data:
+
+The str function: displays the strucutrue of an object
+
+```{r}
+str(mtcars)
+```
+
+The summary function: dipslays some sommary information about the object
+```{r}
+summary(mtcars)
+```
+
+Head and Tail funcation let you see the top, or bottom rows of data.  By defualt they show 6 rows.
+```{r}
+head(mtcars)
+tail(mtcars)
+```
+-----
+
+## packages
+
+> * A package is
+> * there are currently  ____ packages available on CRAN
+>* some of my favorite packes i have found along the way
+
+---
+
+## Packages Cont.
+
+To use a package 
+instal
+lirbary
+
+in a rerun script use function rquire
+
+---
+
+## Reading data from a file
+
+read.csv and read.table both by defualt create data frames
+
+---
+
+
+#Questions?
+-----
+
+
 install.packages("devtools")
 library(devtools)
 #install_github("slidify", "ramnathv")

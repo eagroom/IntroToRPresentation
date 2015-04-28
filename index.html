@@ -32,8 +32,8 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Intro to R for the C# Developer</h1>
-    <h2>Use the Arrow keys to navigate</h2>
-    <p>Elizabeth Groom<br/></p>
+    <h2>(Use arrow keys to navigate)</h2>
+    <p>Elizabeth Groom<br/>Software Engineer at Cartegraph\Data enthusist</p>
   </hgroup>
   <article></article>  
 </slide>
@@ -64,7 +64,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
   <article data-timings="">
     <p>Consider the case study presented by Keith Baggerly <a href="http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/">The Anil Potti Story</a></p>
 
-<p>&quot;Intuition in high through put biology is poor&quot; Keith Baggerly </p>
+<p>&quot;Intuition in high through put biology is poor&quot; -Keith Baggerly </p>
 
 <p>Article: &quot;Genomic signutres to guide the use of chemotherapeutics in the treat of Cancer.&quot;
   Auther: Potti et al (2006), 
@@ -102,7 +102,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
 <li><p>R is a system for statistical computation and graphics. It consists of a language <code>plus a run-time environment with graphics</code>, a debugger, access to certain system functions, and the ability to run programs stored in script files.</p></li>
 <li><p>R is a dialect of the S language.</p></li>
 <li><p>S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)</p></li>
-<li><p>[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.&quot; John Chambers</p></li>
+<li><p>&quot;[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important.&quot; John Chambers</p></li>
 </ul>
 
   </article>
@@ -117,14 +117,19 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
     <ul class = "build incremental">
 <li><p>In 1991 Ross Ihaka and Robert Gentleman created R</p></li>
 <li><p>Runs on almost any standard computing platform/OS (even on the PlayStation 3)</p></li>
+<li><p>Frequent releases (annual + bugfix releases); active development.</p></li>
 </ul>
 
-<h2>* Frequent releases (annual + bugfix releases); active development.</h2>
-</blockquote>
+  </article>
+  <!-- Presenter Notes -->
+</slide>
 
-<h2>The Tools</h2>
-
-<ul>
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>The Tools</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
 <li><p>R comes with an IDE.  Its not bad.</p></li>
 <li><p>Recommend RStudio. It&#39;s <code>free</code> and includes alot of great features like syntax highlight, auto compltion and integrated help.</p></li>
 </ul>
@@ -133,7 +138,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-6" style="background:;">
+<slide class="" id="slide-7" style="background:;">
   <hgroup>
     <h2>Varible assignment</h2>
   </hgroup>
@@ -150,7 +155,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-7" style="background:;">
+<slide class="" id="slide-8" style="background:;">
   <hgroup>
     <h2>Two more ways to Assign varibles</h2>
   </hgroup>
@@ -177,7 +182,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-8" style="background:;">
+<slide class="" id="slide-9" style="background:;">
   <hgroup>
     <h2>Auto print</h2>
   </hgroup>
@@ -197,7 +202,7 @@ x
 
 <p>Notice how X prints out : [1] 10</p>
 
-<p>The simplest such structure is the numeric vector. The number in brackets denotes the number of items in the vector.  </p>
+<p>The simplest structure in R is the numeric vector. The number in brackets denotes the number of items in the vector.  </p>
 
 <p>We can check the vertor type with the funciton class</p>
 
@@ -229,9 +234,147 @@ x
   <!-- Presenter Notes -->
 </slide>
 
-<slide class="" id="slide-9" style="background:;">
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>Data frames - The most useful object</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>A data rame for all intents nad purposes in a table.</p>
+
+<ul class = "build incremental">
+<li>Each columns is a vecotr of the same type, but each column can be differnt</li>
+<li>Each column has the same length</li>
+<li>Columns can have labels
+Lets Check out one of the the sample Data sets in R: mtCars</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-11" style="background:;">
   <hgroup>
     <h2>Data frames</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Data Frames have some helpful functions to help you get to know your data:</p>
+
+<p>The str function: displays the strucutrue of an object</p>
+
+<pre><code class="r">str(mtcars)
+</code></pre>
+
+<pre><code>## &#39;data.frame&#39;:    32 obs. of  11 variables:
+##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+##  $ disp: num  160 160 108 258 360 ...
+##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+##  $ qsec: num  16.5 17 18.6 19.4 17 ...
+##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+</code></pre>
+
+<p>The summary function: dipslays some sommary information about the object</p>
+
+<pre><code class="r">summary(mtcars)
+</code></pre>
+
+<pre><code>##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+</code></pre>
+
+<p>Head and Tail funcation let you see the top, or bottom rows of data.  By defualt they show 6 rows.</p>
+
+<pre><code class="r">head(mtcars)
+</code></pre>
+
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+</code></pre>
+
+<pre><code class="r">tail(mtcars)
+</code></pre>
+
+<pre><code>##                 mpg cyl  disp  hp drat    wt qsec vs am gear carb
+## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
+## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
+## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
+## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
+## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
+## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2
+</code></pre>
+
+<hr>
+
+<h2>packages</h2>
+
+<ul class = "build incremental">
+<li>A package is</li>
+<li>there are currently  ____ packages available on CRAN</li>
+<li>some of my favorite packes i have found along the way</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Packages Cont.</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To use a package 
+instal
+lirbary</p>
+
+<p>in a rerun script use function rquire</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2>Reading data from a file</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>read.csv and read.table both by defualt create data frames</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>#Questions?</h2>
   </hgroup>
   <article data-timings="">
     <p>install.packages(&quot;devtools&quot;)
@@ -282,26 +425,56 @@ library(slidify)</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=6 title='Varible assignment'>
+        data-slide=6 title='The Tools'>
          6
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=7 title='Two more ways to Assign varibles'>
+        data-slide=7 title='Varible assignment'>
          7
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Auto print'>
+        data-slide=8 title='Two more ways to Assign varibles'>
          8
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=9 title='Data frames'>
+        data-slide=9 title='Auto print'>
          9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Data frames - The most useful object'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Data frames'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Packages Cont.'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Reading data from a file'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='#Questions?'>
+         14
       </a>
     </li>
   </ul>
