@@ -39,6 +39,7 @@ The idea is they developed a tool that can be usedd to predict weather a patient
 <b>Amazing!</b>
 
 ---
+
 ## Why Cont.
 
 This was very exicting to M.D. Anderson who asked Baggerly's group to evaluate the Potti group's tools for predicting whether given patients would respond to different chemotherapies
@@ -46,7 +47,6 @@ This was very exicting to M.D. Anderson who asked Baggerly's group to evaluate t
 What Baggerly found was poor data anyslis as several steps along the way.  Easy things like mis-labeling of data.  But this caused patients to not get the drugs that it is predicted their cancer would respond best to!
 
 "Intuition in high through put biology is poor" in other words... we need impartial enigeers who care deeply about the process and the math data is currated through so that the doctors can genticis can learn factual things from the data.
-
 
 ---
 
@@ -64,11 +64,11 @@ What Baggerly found was poor data anyslis as several steps along the way.  Easy 
 
 ## What is R Cont.
 
-> * In 1991 Ross Ihaka and Robert Gentleman created R
+* In 1991 Ross Ihaka and Robert Gentleman created R
 
-> * Runs on almost any standard computing platform/OS (even on the PlayStation 3)
+* Runs on almost any standard computing platform/OS (even on the PlayStation 3)
 
-> * Frequent releases (annual + bugfix releases); active development.
+* Frequent releases (annual + bugfix releases); active development.
 
 ---
 
@@ -76,7 +76,7 @@ What Baggerly found was poor data anyslis as several steps along the way.  Easy 
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's `free` and includes alot of great features like syntax highlight, auto compltion and integrated help.
+* Recommend RStudio. It's <b>`free`</b> and includes alot of great features like syntax highlight, auto compltion and integrated help.
 
 ---
 
@@ -98,19 +98,19 @@ The assignmnet operator is an "<-".  You can read it as "x get's 1
 
 ## Two more ways to Assign varibles
 
-> 1. "=".  Works in "most" contexts
+1. "=".  Works in "most" contexts
 
 ```r
 x = 1
 ```
 
-> 2. assign function
+2. assign function
 
 ```r
 assign("x", 1)
 ```
 
-> This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and thye work in "most" context.`
+This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and thye work in "most" context.`
 
 ---
 
@@ -127,7 +127,9 @@ x
 ```
 ## [1] 10
 ```
+
 ---
+
 ## vectors
 
 Notice how X prints out : [1] 10
@@ -153,6 +155,10 @@ class(x)
 ## [1] "numeric"
 ```
 
+---
+
+## vectors cont.
+
 R has five basic or "atomic" classes of objects:
 * character
 * numeric (real numbers)
@@ -167,18 +173,19 @@ A vector can only contain objects of the same class
 ## Data frames - The most useful object
 
 A data rame for all intents nad purposes in a table.
-> * Each columns is a vecotr of the same type, but each column can be differnt
-> * Each column has the same length
-> * Columns can have labels
+* Each columns is a vecotr of the same type, but each column can be differnt
+* Each column has the same length
+* Columns can have labels
+
 Lets Check out one of the the sample Data sets in R: mtCars
 
 ---
+
 ## Data frames
 
 Data Frames have some helpful functions to help you get to know your data:
 
 The str function: displays the strucutrue of an object
-
 
 ```r
 str(mtcars)
@@ -198,6 +205,10 @@ str(mtcars)
 ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
 ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
 ```
+
+---
+
+## Data frames
 
 The summary function: dipslays some sommary information about the object
 
@@ -229,6 +240,63 @@ summary(mtcars)
 ##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
 ```
 
+1st Qu. = the first quantitle - means 25% observations are below this 
+3rd Qu. = the third quantitle - means 75% observations are below this
+Median = The middle point. Half the numbers are above this value
+Mean = average
+
+---
+
+#Data frames
+
+Lets confirm the mean of the miles per gallon column (20.09)
+
+to get the just the mpg column we use the $
+
+
+```r
+ mtcars$mpg
+```
+
+```
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4
+```
+
+---
+
+then we can sum the column and get its legnth
+
+
+```r
+sumMPG <- sum(mtcars$mpg)
+lengthMPG <- length(mtcars$mpg)
+
+sumMPG/lengthMPG
+```
+
+```
+## [1] 20.09062
+```
+
+---
+
+
+```r
+round(sumMPG/lengthMPG, 2)
+```
+
+```
+## [1] 20.09
+```
+
+Perfect!  That matches the summary value of 20.09
+
+---
+
+## Data frames
+
 Head and Tail funcation let you see the top, or bottom rows of data.  By defualt they show 6 rows.
 
 ```r
@@ -246,46 +314,53 @@ head(mtcars)
 ```
 
 ```r
-tail(mtcars)
+tail(mtcars, 2)
 ```
 
 ```
-##                 mpg cyl  disp  hp drat    wt qsec vs am gear carb
-## Porsche 914-2  26.0   4 120.3  91 4.43 2.140 16.7  0  1    5    2
-## Lotus Europa   30.4   4  95.1 113 3.77 1.513 16.9  1  1    5    2
-## Ford Pantera L 15.8   8 351.0 264 4.22 3.170 14.5  0  1    5    4
-## Ferrari Dino   19.7   6 145.0 175 3.62 2.770 15.5  0  1    5    6
-## Maserati Bora  15.0   8 301.0 335 3.54 3.570 14.6  0  1    5    8
-## Volvo 142E     21.4   4 121.0 109 4.11 2.780 18.6  1  1    4    2
+##                mpg cyl disp  hp drat   wt qsec vs am gear carb
+## Maserati Bora 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+## Volvo 142E    21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
 ```
------
-
-## packages
-
-> * A package is
-> * there are currently  ____ packages available on CRAN
->* some of my favorite packes i have found along the way
 
 ---
 
-## Packages Cont.
+---
 
-To use a package 
-instal
-lirbary
+## A real Data set
 
+Let's take a look at the survey results from the 2015 
+[http://stackoverflow.com/research/developer-survey-2015](Survey result)
+
+Steps:
+1. set the working directory
+  point out: escape back slashes with double slashes like in c# or use the /
+2. read the data from the file
+3. show the enivornment varibles
+4. show the quick text with tab
+5. factors
+7. packages
+8. help
+9. ...parameter
+10. optional parameters
+
+---
+
+## Reusable scripts
+
+Now lets say I am interested in what countries the  over 60 crowd are in.
+
+Point out:
+commments
 in a rerun script use function rquire
+method returns
+looping
+sourcing the script
 
 ---
-
-## Reading data from a file
-
-read.csv and read.table both by defualt create data frames
-
----
-
 
 #Questions?
+
 -----
 
 

@@ -39,6 +39,7 @@ The idea is they developed a tool that can be usedd to predict weather a patient
 <b>Amazing!</b>
 
 ---
+
 ## Why Cont.
 
 This was very exicting to M.D. Anderson who asked Baggerly's group to evaluate the Potti group's tools for predicting whether given patients would respond to different chemotherapies
@@ -46,7 +47,6 @@ This was very exicting to M.D. Anderson who asked Baggerly's group to evaluate t
 What Baggerly found was poor data anyslis as several steps along the way.  Easy things like mis-labeling of data.  But this caused patients to not get the drugs that it is predicted their cancer would respond best to!
 
 "Intuition in high through put biology is poor" in other words... we need impartial enigeers who care deeply about the process and the math data is currated through so that the doctors can genticis can learn factual things from the data.
-
 
 ---
 
@@ -76,7 +76,7 @@ What Baggerly found was poor data anyslis as several steps along the way.  Easy 
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's `free` and includes alot of great features like syntax highlight, auto compltion and integrated help.
+* Recommend RStudio. It's <b>`free`</b> and includes alot of great features like syntax highlight, auto compltion and integrated help.
 
 ---
 
@@ -98,17 +98,17 @@ The assignmnet operator is an "<-".  You can read it as "x get's 1
 
 ## Two more ways to Assign varibles
 
-> 1. "=".  Works in "most" contexts
+1. "=".  Works in "most" contexts
 ```{r}
 x = 1
 ```
 
-> 2. assign function
+2. assign function
 ```{r}
 assign("x", 1)
 ```
 
-> This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and thye work in "most" context.`
+This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and thye work in "most" context.`
 
 ---
 
@@ -120,7 +120,9 @@ To print out our value of x:
 x<- 10
 x
 ```
+
 ---
+
 ## vectors
 
 Notice how X prints out : [1] 10
@@ -134,6 +136,10 @@ x
 
 class(x)
 ```
+
+---
+
+## vectors cont.
 
 R has five basic or "atomic" classes of objects:
 * character
@@ -149,60 +155,117 @@ A vector can only contain objects of the same class
 ## Data frames - The most useful object
 
 A data rame for all intents nad purposes in a table.
-> * Each columns is a vecotr of the same type, but each column can be differnt
-> * Each column has the same length
-> * Columns can have labels
+* Each columns is a vecotr of the same type, but each column can be differnt
+* Each column has the same length
+* Columns can have labels
+
 Lets Check out one of the the sample Data sets in R: mtCars
 
 ---
+
 ## Data frames
 
 Data Frames have some helpful functions to help you get to know your data:
 
 The str function: displays the strucutrue of an object
-
 ```{r}
 str(mtcars)
 ```
+
+---
+
+## Data frames
 
 The summary function: dipslays some sommary information about the object
 ```{r}
 summary(mtcars)
 ```
 
+1st Qu. = the first quantitle - means 25% observations are below this 
+3rd Qu. = the third quantitle - means 75% observations are below this
+Median = The middle point. Half the numbers are above this value
+Mean = average
+
+---
+
+#Data frames
+
+Lets confirm the mean of the miles per gallon column (20.09)
+
+to get the just the mpg column we use the $
+
+```{r}
+ mtcars$mpg
+```
+
+---
+
+then we can sum the column and get its legnth
+
+```{r}
+sumMPG <- sum(mtcars$mpg)
+lengthMPG <- length(mtcars$mpg)
+
+sumMPG/lengthMPG
+
+```
+
+---
+
+```{r}
+round(sumMPG/lengthMPG, 2)
+```
+
+Perfect!  That matches the summary value of 20.09
+
+---
+
+## Data frames
+
 Head and Tail funcation let you see the top, or bottom rows of data.  By defualt they show 6 rows.
 ```{r}
 head(mtcars)
-tail(mtcars)
+tail(mtcars, 2)
 ```
------
-
-## packages
-
-> * A package is
-> * there are currently  ____ packages available on CRAN
->* some of my favorite packes i have found along the way
 
 ---
 
-## Packages Cont.
+---
 
-To use a package 
-instal
-lirbary
+## A real Data set
 
+Let's take a look at the survey results from the 2015 
+[http://stackoverflow.com/research/developer-survey-2015](Survey result)
+
+Steps:
+1. set the working directory
+  point out: escape back slashes with double slashes like in c# or use the /
+2. read the data from the file
+3. show the enivornment varibles
+4. show the quick text with tab
+5. factors
+7. packages
+8. help
+9. ...parameter
+10. optional parameters
+
+---
+
+## Reusable scripts
+
+Now lets say I am interested in what countries the  over 60 crowd are in.
+
+Point out:
+commments
 in a rerun script use function rquire
+method returns
+looping
+sourcing the script
 
 ---
-
-## Reading data from a file
-
-read.csv and read.table both by defualt create data frames
-
----
-
 
 #Questions?
+
 -----
 
 
