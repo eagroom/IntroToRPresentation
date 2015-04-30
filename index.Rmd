@@ -52,13 +52,15 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 ## What is R
 
-> * R is a system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
+> * R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
 
 > * R is a dialect of the S language.
 
 > * S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)
 
 > * "[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important." John Chambers
+
+
 
 ---
 
@@ -262,7 +264,21 @@ sourcing the script
 
 ---
 
-#Questions?
+## R is a n interactive langue
+
+It seems that the reproducibility of
+
+---
+
+## summary
+
+ "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well, and due to that, the language has been facing some critical issues in performance, which you will come to know more about from reading this tutorial."
+ 
+ -[https://blog.udemy.com/r-tutorial/](Laran Joseph)
+
+---
+
+##Questions?
 
 -----
 
