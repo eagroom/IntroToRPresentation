@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 ## About me
 
 Elizabeth Groom
-Software Engineer Cartegraph in Dubuque since 2003
+Software Engineer Cartegraph in Dubuque
 
 email me: eagroom@yahoo.com  
 find this presentation on github at: [https://github.com/eagroom/IntroToRPresentation] (https://github.com/eagroom/IntroToRPresentation)  
@@ -52,15 +52,13 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 ## What is R
 
-> * R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
+* R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
 
 > * R is a dialect of the S language.
 
 > * S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)
 
 > * "[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important." John Chambers
-
-
 
 ---
 
@@ -78,7 +76,8 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features like syntax highlight, auto completion and integrated help.
+* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features like syntax highlighting, auto completion and integrated help.  
+  [http://www.rstudio.com/](http://www.rstudio.com/)
 
 ---
 
@@ -100,12 +99,12 @@ The assignment operator is an "<-".  You can read it as "x get's 1
 
 ## Two more ways to Assign variables
 
-1. "=".  Works in "most" contexts
+"=".  Works in "most" contexts
 ```{r}
 x = 1
 ```
 
-2. assign function
+assign function
 ```{r}
 assign("x", 1)
 ```
@@ -157,7 +156,7 @@ A vector can only contain objects of the same class
 ## Data frames - The most useful object
 
 A data frame for all intents and purposes in a table.
-* Each columns is a vector of the same type, but each column can be different
+* Each columns is a vector
 * Each column has the same length
 * Columns can have labels
 
@@ -183,24 +182,26 @@ The summary function: displays some summary information about the object
 summary(mtcars)
 ```
 
-1st Qu. = the first quantile- means 25% observations are below this 
-3rd Qu. = the third quantile - means 75% observations are below this
-Median = The middle point. Half the numbers are above this value
-Mean = average
+---
+
+## Data frames 
+
+Quick review of terms form the summary:
+
+* 1st Qu. = the first quantile- means 25% observations are below this   
+* 3rd Qu. = the third quantile - means 75% observations are below this  
+* Median = The middle point. Half the numbers are above this value  
+* Mean = average  
 
 ---
 
-#Data frames
+## Data frames
 
-Let's confirm the mean of the miles per gallon column (20.09)
-
-to get the just the mpg column we use the $
+Let's confirm the mean of the miles per gallon column (20.09). To get the just the mpg column we use the $
 
 ```{r}
  mtcars$mpg
 ```
-
----
 
 then we can sum the column and get its length
 
@@ -209,7 +210,6 @@ sumMPG <- sum(mtcars$mpg)
 lengthMPG <- length(mtcars$mpg)
 
 sumMPG/lengthMPG
-
 ```
 
 ---
@@ -227,9 +227,30 @@ Perfect!  That matches the summary value of 20.09
 Head and Tail function let you see the top, or bottom rows of data.  By default they show 6 rows.
 ```{r}
 head(mtcars)
-tail(mtcars, 2)
 ```
 
+---
+
+## Data frames
+
+```{r}
+tail(mtcars, 4)
+```
+
+---
+
+## Packages
+
+Packages extend the funcationality of R.  
+They an be equaited to libraries in .Net
+
+> There are currently packages available on the cran 6,587
+
+> first time you access a apckage you need to install it: install.packages("packageName")
+
+> load the library into memory when you need to use it: library(packageName)
+
+> Packages may ned to be updated as R upgrades
 ---
 
 ## A real Data set
@@ -237,6 +258,9 @@ tail(mtcars, 2)
 Let's take a look at the survey results from the 2015 
 [http://stackoverflow.com/research/developer-survey-2015](Survey result)
 
+Demo of using the Console
+
+*** pnotes
 Steps:
 1. set the working directory
   point out: escape back slashes with double slashes like in c# or use the /
@@ -255,18 +279,61 @@ Steps:
 
 Now lets say I am interested in what countries the  over 60 crowd are in.
 
+Demo the reusabel script functions.
+
+*** pnotes
 Point out:
-comments
-in a rerun script use function require
-method returns
-looping
-sourcing the script
+1. comments
+2, in a rerun script use function require
+3, method returns
+4, looping
+5. sourcing the script
+6. functions are treated like any other object
 
 ---
 
-## R is a n interactive langue
+## NA
 
-It seems that the reproducibility of
+---
+
+#lapply, sapply, tapply
+
+looping is great, but R is an interactive lanuage, for loops in the console would be hard, what's a statiscan to do?
+
+To the rescue... the applies!
+
+. lapply(): Loop over a list and evaluate a function on each element
+. sapply(): Same as lapply but try to simplify the result
+. apply(): Apply a function over the margins of an array
+. tapply(): Apply a function over subsets of a vector
+. mapply(): Multivariate version of lapply
+
+<b> Demo </b>
+---
+
+## scopping and free varibles in R
+
+
+Consider the function:
+
+```{R}
+f <- function(x, y) {
+  x + y - z
+}
+```
+This function has 2 formal arguments x and y. In the body of the function there is another symbol z. In this case z is called a `free variable`. The scoping rules of a language determine how values are assigned to free variables. `R uses lexical scoping.` 
+
+Free variables are not formal arguments and are not local variables. The values of free variables are searched for in the environment in which the function was defined.
+ 
+<b>demo</b>
+---
+
+When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
+
+1. Search the global environment for a symbol name matching the one requested.
+2. Search the namespaces of each of the packages on the search list
+
+The search list can be found by using the `search` function.
 
 ---
 
@@ -278,18 +345,32 @@ It seems that the reproducibility of
 
 ---
 
-##Questions?
+## Want to get started?
+
+1. (http://cran.r-project.org/)[Install R binaries from the CRAN: http://cran.r-project.org]
+2. (http://www.rstudio.com/)[Install RStudio]
+3.  Start learning more:
+  (http://swirlstats.com/)[Learn R in R: swirl]  
+  (http://www.rstudio.com/resources/training/online-learning/)[http://www.rstudio.com/resources/training/online-learning/]  
+  (http://tryr.codeschool.com/)[http://tryr.codeschool.com/]  
+
+(https://www.coursera.org/specialization/jhudatascience/1)[Coursera Data Science Specialization]
 
 -----
-
+C:/Users/Elizabeth/Documents/IntroToR/IntroToRPresentation/index.html?presentme=true
 
 install.packages("devtools")
-library(devtools)
 install_github("slidify", "ramnathv")
 install_github("slidifyLibraries", "ramnathv")
+library(devtools)
 library(slidify)
 
 slidify("index.Rmd")
+
+todo:
+lapply, tapply expample
+na example
+formatting
 ---
 
 

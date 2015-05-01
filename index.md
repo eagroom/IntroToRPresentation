@@ -15,7 +15,7 @@ knit        : slidify::knit2slides
 ## About me
 
 Elizabeth Groom
-Software Engineer Cartegraph in Dubuque since 2003
+Software Engineer Cartegraph in Dubuque
 
 email me: eagroom@yahoo.com  
 find this presentation on github at: [https://github.com/eagroom/IntroToRPresentation] (https://github.com/eagroom/IntroToRPresentation)  
@@ -52,7 +52,7 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 ## What is R
 
-> * R is a system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
+* R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
 
 > * R is a dialect of the S language.
 
@@ -76,7 +76,8 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features like syntax highlight, auto completion and integrated help.
+* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features like syntax highlighting, auto completion and integrated help.  
+  [http://www.rstudio.com/](http://www.rstudio.com/)
 
 ---
 
@@ -98,13 +99,13 @@ The assignment operator is an "<-".  You can read it as "x get's 1
 
 ## Two more ways to Assign variables
 
-1. "=".  Works in "most" contexts
+"=".  Works in "most" contexts
 
 ```r
 x = 1
 ```
 
-2. assign function
+assign function
 
 ```r
 assign("x", 1)
@@ -173,7 +174,7 @@ A vector can only contain objects of the same class
 ## Data frames - The most useful object
 
 A data frame for all intents and purposes in a table.
-* Each columns is a vector of the same type, but each column can be different
+* Each columns is a vector
 * Each column has the same length
 * Columns can have labels
 
@@ -240,18 +241,22 @@ summary(mtcars)
 ##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
 ```
 
-1st Qu. = the first quantile- means 25% observations are below this 
-3rd Qu. = the third quantile - means 75% observations are below this
-Median = The middle point. Half the numbers are above this value
-Mean = average
+---
+
+## Data frames 
+
+Quick review of terms form the summary:
+
+* 1st Qu. = the first quantile- means 25% observations are below this   
+* 3rd Qu. = the third quantile - means 75% observations are below this  
+* Median = The middle point. Half the numbers are above this value  
+* Mean = average  
 
 ---
 
-#Data frames
+## Data frames
 
-Let's confirm the mean of the miles per gallon column (20.09)
-
-to get the just the mpg column we use the $
+Let's confirm the mean of the miles per gallon column (20.09). To get the just the mpg column we use the $
 
 
 ```r
@@ -263,8 +268,6 @@ to get the just the mpg column we use the $
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4
 ```
-
----
 
 then we can sum the column and get its length
 
@@ -313,16 +316,37 @@ head(mtcars)
 ## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
 ```
 
+---
+
+## Data frames
+
+
 ```r
-tail(mtcars, 2)
+tail(mtcars, 4)
 ```
 
 ```
-##                mpg cyl disp  hp drat   wt qsec vs am gear carb
-## Maserati Bora 15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
-## Volvo 142E    21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
+##                 mpg cyl disp  hp drat   wt qsec vs am gear carb
+## Ford Pantera L 15.8   8  351 264 4.22 3.17 14.5  0  1    5    4
+## Ferrari Dino   19.7   6  145 175 3.62 2.77 15.5  0  1    5    6
+## Maserati Bora  15.0   8  301 335 3.54 3.57 14.6  0  1    5    8
+## Volvo 142E     21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
 ```
 
+---
+
+## Packages
+
+Packages extend the funcationality of R.  
+They an be equaited to libraries in .Net
+
+> There are currently packages available on the cran 6,587
+
+> first time you access a apckage you need to install it: install.packages("packageName")
+
+> load the library into memory when you need to use it: library(packageName)
+
+> Packages may ned to be updated as R upgrades
 ---
 
 ## A real Data set
@@ -330,6 +354,9 @@ tail(mtcars, 2)
 Let's take a look at the survey results from the 2015 
 [http://stackoverflow.com/research/developer-survey-2015](Survey result)
 
+Demo of using the Console
+
+*** pnotes
 Steps:
 1. set the working directory
   point out: escape back slashes with double slashes like in c# or use the /
@@ -348,27 +375,97 @@ Steps:
 
 Now lets say I am interested in what countries the  over 60 crowd are in.
 
+Demo the reusabel script functions.
+
+*** pnotes
 Point out:
-comments
-in a rerun script use function require
-method returns
-looping
-sourcing the script
+1. comments
+2, in a rerun script use function require
+3, method returns
+4, looping
+5. sourcing the script
+6. functions are treated like any other object
 
 ---
 
-#Questions?
+## NA
+
+---
+
+#lapply, sapply, tapply
+
+looping is great, but R is an interactive lanuage, for loops in the console would be hard, what's a statiscan to do?
+
+To the rescue... the applies!
+
+. lapply(): Loop over a list and evaluate a function on each element
+. sapply(): Same as lapply but try to simplify the result
+. apply(): Apply a function over the margins of an array
+. tapply(): Apply a function over subsets of a vector
+. mapply(): Multivariate version of lapply
+
+<b> Demo </b>
+---
+
+## scopping and free varibles in R
+
+
+Consider the function:
+
+```{R}
+f <- function(x, y) {
+  x + y - z
+}
+```
+This function has 2 formal arguments x and y. In the body of the function there is another symbol z. In this case z is called a `free variable`. The scoping rules of a language determine how values are assigned to free variables. `R uses lexical scoping.` 
+
+Free variables are not formal arguments and are not local variables. The values of free variables are searched for in the environment in which the function was defined.
+ 
+<b>demo</b>
+---
+
+When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
+
+1. Search the global environment for a symbol name matching the one requested.
+2. Search the namespaces of each of the packages on the search list
+
+The search list can be found by using the `search` function.
+
+---
+
+## summary
+
+ "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well, and due to that, the language has been facing some critical issues in performance, which you will come to know more about from reading this tutorial."
+ 
+ -[https://blog.udemy.com/r-tutorial/](Laran Joseph)
+
+---
+
+## Want to get started?
+
+1. (http://cran.r-project.org/)[Install R binaries from the CRAN: http://cran.r-project.org]
+2. (http://www.rstudio.com/)[Install RStudio]
+3.  Start learning more:
+  (http://swirlstats.com/)[Learn R in R: swirl]  
+  (http://www.rstudio.com/resources/training/online-learning/)[http://www.rstudio.com/resources/training/online-learning/]  
+  (http://tryr.codeschool.com/)[http://tryr.codeschool.com/]  
+
+(https://www.coursera.org/specialization/jhudatascience/1)[Coursera Data Science Specialization]
 
 -----
-
+C:/Users/Elizabeth/Documents/IntroToR/IntroToRPresentation/index.html?presentme=true
 
 install.packages("devtools")
-library(devtools)
 install_github("slidify", "ramnathv")
 install_github("slidifyLibraries", "ramnathv")
+library(devtools)
 library(slidify)
 
 slidify("index.Rmd")
+
+
+lapply, tapply expample
+na example
 ---
 
 
