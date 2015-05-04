@@ -22,15 +22,18 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 
 `presentation built using slidfy in R` 
 
+*** =pnotes
+11 years at Cartegraph
+jave script (knockout) application wihta  c# back end
+I think data science is important and it will be come more important
+
 --- 
 
 ## Why this is important
 
-Consider the case study presented by Keith Baggerly [The Anil Potti Story] (http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/)
+Consider the case study presented by Keith Baggerly [The Anil Potti Story](http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/)
 
-"Intuition in high through put biology is poor" -Keith Baggerly 
-
-Article: "Genomic signatures to guide the use of chemotherapeutics in the treat of Cancer."
+Article: "[Genomic signatures to guide the use of chemotherapeutics.](http://www.nature.com/nm/journal/v12/n11/abs/nm1491.html)"
   Auther: Potti et al (2006), 
   Magazine: Nature Medicine, 12:1294-1300
 
@@ -42,23 +45,37 @@ The idea is they developed a tool that can be used to predict weather a patient 
 
 ## Why Cont.
 
-This was very exciting to M.D. Anderson who asked Baggerly's group to evaluate the Potti group's tools for predicting whether given patients would respond to different chemotherapies
+This was very exciting to the MD Anderson Cancer Center.  They asked Baggerly's group to evaluate this new tool.
 
-What Baggerly found was poor data analysis as several steps along the way.  Easy things like mis-labeling of data.  But this caused patients to not get the drugs that it is predicted their cancer would respond best to!
+What Baggerly found was poor data analysis as several steps along the way.  Easy things like mis-labeling of data.  This caused patients to not get the drugs that it is predicted their cancer would respond best to!
 
-"Intuition in high through put biology is poor" in other words... we need impartial engineers who care deeply about the process and the math data is curated through so that the doctors can geneticist can learn factual things from the data.
+"Intuition in high through put biology is poor" -Keith Baggerly 
+
+In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw acurate conclusions.
+ 
+*** =pnotes
+Their theory was sound  
+the source data was good  
+Humans are ppor furtone tellers   
+  
+Off my soap box and on to the good stuff
 
 ---
 
 ## What is R
 
-* R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, access to certain system functions, and the ability to run programs stored in script files.
+* R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, and the ability to run programs stored in script files. It is open source.
 
 > * R is a dialect of the S language.
 
 > * S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)
 
-> * "[W]e wanted users to be able to begin in an interactive environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to slide gradually into programming, when the language and system aspects would become more important." John Chambers
+> * "[W]e wanted users to be able to begin in an <b>interactive</b> environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to <b>slide gradually into programming</b>, when the language and system aspects would become more important." John Chambers
+
+*** =pnotes
+Good for newbie programmers, but can be harder for others  
+Not written as a programming lanuage first, but an interactive environemnet first.
+
 
 ---
 
@@ -70,14 +87,22 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 * Frequent releases (annual + bugfix releases); active development.
 
+*** =pnotes
+Mathematicns of New Zealand  
+Mathematicns not computer scienctists  
+Apple OS does have some functional differnce with Windows  
+
 ---
 
 ## The Tools
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features like syntax highlighting, auto completion and integrated help.  
+* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features, simialr to a scaled down visual studion, like syntax highlighting, auto completion and integrated help.  
   [http://www.rstudio.com/](http://www.rstudio.com/)
+
+*** =pnotes
+Show R and Rstudio
 
 ---
 
@@ -95,6 +120,9 @@ The assignment operator is an "<-".  You can read it as "x get's 1
 1 -> x #is also valid
 ```
 
+*** =pnotes
+highlighy inflinced by mathematicns
+
 ---
 
 ## Two more ways to Assign variables
@@ -111,13 +139,13 @@ assign function
 assign("x", 1)
 ```
 
-This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and they work in "most" context.`
+This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and they each work in "most" contexts.`
 
 ---
 
 ## Auto print
 
-To print out our value of x:
+To print out out value of x:
 
 
 ```r
@@ -131,22 +159,39 @@ x
 
 ---
 
-## vectors
+## Vectors
 
 Notice how X prints out : [1] 10
 
 The simplest structure in R is the numeric vector. The number in brackets denotes the number of items in the vector.  
 
+---
+
+## Vectors cont.
+
+R has five basic classes of objects:
+* character
+* numeric (real numbers)
+* integer
+* complex
+* logical (True/False)
+* Factors
+
+A vector can only contain objects of the same class
+
+*** =pnotes
+complex = imaganiary numbers  
+list objects = lists are generic vectors where objects don't have to be the same type  
+Factors are not first class citzens in R  
+A "factor" is a vector whose elements can take on one of a specific set of values. For example, "Sex" will usually take on only the values "M" or "F," whereas "Name" will generally have lots of possibilities. The set of values that the elements of a factor can take are called its levels.
+
+
+---
+
+## Vectors
+
 We can check the vector type with the function class
 
-
-```r
-x
-```
-
-```
-## [1] 10
-```
 
 ```r
 class(x)
@@ -156,145 +201,28 @@ class(x)
 ## [1] "numeric"
 ```
 
----
+you might have expected 10 to be an integer but in R an integer is denoted with an `L`
 
-## vectors cont.
 
-R has five basic or "atomic" classes of objects:
-* character
-* numeric (real numbers)
-* integer
-* complex
-* logical (True/False)
+```r
+x<-10L
+ class(x)
+```
 
-A vector can only contain objects of the same class
+```
+## [1] "integer"
+```
 
 ---
 
 ## Data frames - The most useful object
 
-A data frame for all intents and purposes in a table.
+A data frame for all intents and purposes is a table.
 * Each columns is a vector
 * Each column has the same length
 * Columns can have labels
 
-Let's Check out one of the the sample Data sets in R: mtCars
-
----
-
-## Data frames
-
-Data Frames have some helpful functions to help you get to know your data:
-
-The str function: displays the structure of an object
-
-```r
-str(mtcars)
-```
-
-```
-## 'data.frame':	32 obs. of  11 variables:
-##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
-##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
-##  $ disp: num  160 160 108 258 360 ...
-##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
-##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
-##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
-##  $ qsec: num  16.5 17 18.6 19.4 17 ...
-##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
-##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
-##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
-##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
-```
-
----
-
-## Data frames
-
-The summary function: displays some summary information about the object
-
-```r
-summary(mtcars)
-```
-
-```
-##       mpg             cyl             disp             hp       
-##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
-##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
-##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
-##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
-##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
-##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
-##       drat             wt             qsec             vs        
-##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
-##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
-##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
-##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
-##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
-##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
-##        am              gear            carb      
-##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
-##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
-##  Median :0.0000   Median :4.000   Median :2.000  
-##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
-##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
-##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
-```
-
----
-
-## Data frames 
-
-Quick review of terms form the summary:
-
-* 1st Qu. = the first quantile- means 25% observations are below this   
-* 3rd Qu. = the third quantile - means 75% observations are below this  
-* Median = The middle point. Half the numbers are above this value  
-* Mean = average  
-
----
-
-## Data frames
-
-Let's confirm the mean of the miles per gallon column (20.09). To get the just the mpg column we use the $
-
-
-```r
- mtcars$mpg
-```
-
-```
-##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
-## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
-## [29] 15.8 19.7 15.0 21.4
-```
-
-then we can sum the column and get its length
-
-
-```r
-sumMPG <- sum(mtcars$mpg)
-lengthMPG <- length(mtcars$mpg)
-
-sumMPG/lengthMPG
-```
-
-```
-## [1] 20.09062
-```
-
----
-
-
-```r
-round(sumMPG/lengthMPG, 2)
-```
-
-```
-## [1] 20.09
-```
-
-Perfect!  That matches the summary value of 20.09
+Let's Check out one of the the sample datasets in R: mtCars
 
 ---
 
@@ -333,41 +261,176 @@ tail(mtcars, 4)
 ## Volvo 142E     21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
 ```
 
+*** =pnotes
+one way of setting the optional parameter, could also have done tail(mtcars, n=4)
+
+---
+
+
+## Data frames
+
+Data Frames have some helpful functions to help you get to know your data:
+
+The str function: displays the structure of an object
+
+```r
+str(mtcars)
+```
+
+```
+## 'data.frame':	32 obs. of  11 variables:
+##  $ mpg : num  21 21 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 ...
+##  $ cyl : num  6 6 4 6 8 6 8 4 4 6 ...
+##  $ disp: num  160 160 108 258 360 ...
+##  $ hp  : num  110 110 93 110 175 105 245 62 95 123 ...
+##  $ drat: num  3.9 3.9 3.85 3.08 3.15 2.76 3.21 3.69 3.92 3.92 ...
+##  $ wt  : num  2.62 2.88 2.32 3.21 3.44 ...
+##  $ qsec: num  16.5 17 18.6 19.4 17 ...
+##  $ vs  : num  0 0 1 1 0 1 0 1 1 1 ...
+##  $ am  : num  1 1 1 0 0 0 0 0 0 0 ...
+##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
+##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
+```
+
+*** =pnotes
+the meta data for the columns  
+11 columns and 32 rows  
+
+---
+
+## Data frames
+
+The summary function: displays some summary information about the object
+
+```r
+summary(mtcars)
+```
+
+```
+##       mpg             cyl             disp             hp       
+##  Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  
+##  1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  
+##  Median :19.20   Median :6.000   Median :196.3   Median :123.0  
+##  Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  
+##  3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  
+##  Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  
+##       drat             wt             qsec             vs        
+##  Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  
+##  1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  
+##  Median :3.695   Median :3.325   Median :17.71   Median :0.0000  
+##  Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  
+##  3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  
+##  Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  
+##        am              gear            carb      
+##  Min.   :0.0000   Min.   :3.000   Min.   :1.000  
+##  1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  
+##  Median :0.0000   Median :4.000   Median :2.000  
+##  Mean   :0.4062   Mean   :3.688   Mean   :2.812  
+##  3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  
+##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
+```
+
+*** =pnotes
+word wrapping
+
+---
+
+## Data frames 
+
+Quick review of terms form the summary:
+
+* 1st Qu. = the first quantile- means 25% observations are below this   
+* 3rd Qu. = the third quantile - means 75% observations are below this  
+* Median = The middle point. Half the numbers are above this value  
+* Mean = average  
+
+*** =pnotes
+obvious min and max  
+
+2nd most impartant thing i have learned.  R is writtne assuming tou are a fluent statistican. (I am not so there is alot of learning)
+
+
+---
+
+## Data frames
+
+Let's confirm the mean of the miles per gallon column (20.09). To get the just the mpg column we use the $
+
+
+```r
+ mtcars$mpg
+```
+
+```
+##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
+## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
+## [29] 15.8 19.7 15.0 21.4
+```
+
+then we can sum the column and get its length
+
+
+```r
+sumMPG <- sum(mtcars$mpg)
+lengthMPG <- length(mtcars$mpg)
+
+sumMPG/lengthMPG
+```
+
+```
+## [1] 20.09062
+```
+
+*** =pnotes
+point our the items numbers in the row wrapping [15], 10.4 is the 15th element
+
+---
+
+## Data frames
+
+
+```r
+round(sumMPG/lengthMPG, 2)
+```
+
+```
+## [1] 20.09
+```
+
+Perfect!  That matches the summary value of 20.09
+
 ---
 
 ## Packages
 
-Packages extend the funcationality of R.  
-They an be equaited to libraries in .Net
+ * Packages extend the funcationality of R.  
 
-> There are currently packages available on the cran 6,587
+> * They an be equaited to libraries in .Net
 
-> first time you access a apckage you need to install it: install.packages("packageName")
+> * There are currently packages available on the cran 6,587
 
-> load the library into memory when you need to use it: library(packageName)
+> * first time you access a package you need to install it: install.packages("packageName")
 
-> Packages may ned to be updated as R upgrades
+> * load the package into memory when you need to use it: library(packageName)  
+
+> * Packages may ned to be updated as R upgrades
+
 ---
 
 ## A real Data set
 
 Let's take a look at the survey results from the 2015 
-[http://stackoverflow.com/research/developer-survey-2015](Survey result)
+[Stack overflow Developer Survey](http://stackoverflow.com/research/developer-survey-2015)
 
 Demo of using the Console
 
-*** pnotes
-Steps:
-1. set the working directory
-  point out: escape back slashes with double slashes like in c# or use the /
-2. read the data from the file
-3. show the environment variables
-4. show the quick text with tab
-5. factors
-7. packages
-8. help
-9. ...parameter
-10. optional parameters
+*** =pnotes
+Steps: 1. set the working directory  
+  point out: escape back slashes with double slashes like in c# or use the /  
+2. read the data from the file    3. show the environment variables  
+4. show the quick text with tab   5. factors  
+7. packages                       8. help                 9. ...parameter  
+10. optional parameters  
 
 ---
 
@@ -377,14 +440,14 @@ Now lets say I am interested in what countries the  over 60 crowd are in.
 
 Demo the reusabel script functions.
 
-*** pnotes
+*** =pnotes
 Point out:
-1. comments
-2, in a rerun script use function require
-3, method returns
-4, looping
-5. sourcing the script
-6. functions are treated like any other object
+1. comments  
+2, in a rerun script use function require  
+3, method returns  
+4, looping  
+5. sourcing the script  
+6. functions are treated like any other object  
 
 ---
 
@@ -392,22 +455,26 @@ Point out:
 
 ---
 
-#lapply, sapply, tapply
+## lapply, sapply, tapply
 
 looping is great, but R is an interactive lanuage, for loops in the console would be hard, what's a statiscan to do?
 
 To the rescue... the applies!
 
-. lapply(): Loop over a list and evaluate a function on each element
-. sapply(): Same as lapply but try to simplify the result
-. apply(): Apply a function over the margins of an array
-. tapply(): Apply a function over subsets of a vector
-. mapply(): Multivariate version of lapply
+. lapply(): Loop over a list and evaluate a function on each element  
+. sapply(): Same as lapply but try to simplify the result  
+. apply(): Apply a function over the margins of an array  
+. tapply(): Apply a function over subsets of a vector  
+. mapply(): Multivariate version of lapply  
 
-<b> Demo </b>
+
+*** =pnotes
+sapply returns a vector, lapply returns a list  
+demo
+
 ---
 
-## scopping and free varibles in R
+## Scopping and free varibles in R
 
 
 Consider the function:
@@ -420,53 +487,42 @@ f <- function(x, y) {
 This function has 2 formal arguments x and y. In the body of the function there is another symbol z. In this case z is called a `free variable`. The scoping rules of a language determine how values are assigned to free variables. `R uses lexical scoping.` 
 
 Free variables are not formal arguments and are not local variables. The values of free variables are searched for in the environment in which the function was defined.
- 
-<b>demo</b>
+*** =pnotes
+demo
+
 ---
+
+## Scopping and free varibles in R
 
 When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
 
-1. Search the global environment for a symbol name matching the one requested.
-2. Search the namespaces of each of the packages on the search list
+1. Search the global environment for a symbol name matching the one requested.  
+2. Search the namespaces of each of the packages on the search list  
 
 The search list can be found by using the `search` function.
 
 ---
 
-## summary
+## Summary
 
- "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well, and due to that, the language has been facing some critical issues in performance, which you will come to know more about from reading this tutorial."
+ "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well..."
  
- -[https://blog.udemy.com/r-tutorial/](Laran Joseph)
+ -[Laran Joseph](https://blog.udemy.com/r-tutorial)
 
 ---
 
 ## Want to get started?
 
-1. (http://cran.r-project.org/)[Install R binaries from the CRAN: http://cran.r-project.org]
-2. (http://www.rstudio.com/)[Install RStudio]
-3.  Start learning more:
-  (http://swirlstats.com/)[Learn R in R: swirl]  
-  (http://www.rstudio.com/resources/training/online-learning/)[http://www.rstudio.com/resources/training/online-learning/]  
-  (http://tryr.codeschool.com/)[http://tryr.codeschool.com/]  
+1. [Install R binaries from the CRAN: http://cran.r-project.org](http://cran.r-project.org/)
+2. [Install RStudio] (http://www.rstudio.com/)
+3.  Start learning more:   
+  * [Learn R in R: swirl](http://swirlstats.com/)  
+  * [http://www.rstudio.com/resources/training/online-learning/](http://www.rstudio.com/resources/training/online-learning/)  
+  * [http://tryr.codeschool.com/](http://tryr.codeschool.com/)  
+  * [Coursera Data Science Specialization](https://www.coursera.org/specialization/jhudatascience/1)
 
-(https://www.coursera.org/specialization/jhudatascience/1)[Coursera Data Science Specialization]
-
------
-C:/Users/Elizabeth/Documents/IntroToR/IntroToRPresentation/index.html?presentme=true
-
-install.packages("devtools")
-install_github("slidify", "ramnathv")
-install_github("slidifyLibraries", "ramnathv")
-library(devtools)
-library(slidify)
-
-slidify("index.Rmd")
-
-
-lapply, tapply expample
-na example
 ---
+## Questions?
 
-
+Feel free to contact me nad I will help if I can! eagroom@yahoo.com
 
