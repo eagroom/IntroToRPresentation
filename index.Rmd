@@ -24,8 +24,8 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 
 *** =pnotes
 11 years at Cartegraph
-jave script (knockout) application wihta  c# back end
-I think data science is important and it will be come more important
+jave script (knockout) application with a  c# back end
+I think data science is important and it will become more important
 
 --- 
 
@@ -37,7 +37,7 @@ Article: "[Genomic signatures to guide the use of chemotherapeutics.](http://www
   Auther: Potti et al (2006), 
   Magazine: Nature Medicine, 12:1294-1300
 
-The idea is they developed a tool that can be used to predict weather a patient will respond to chemotherapies by knowing What drugs are most effective against which cells.  
+The idea is they developed a tool that can be used to predict weather a patient will respond to chemotherapies by knowing what drugs are most effective against which cells.  
 
 <b>Amazing!</b>
 
@@ -47,7 +47,7 @@ The idea is they developed a tool that can be used to predict weather a patient 
 
 This was very exciting to the MD Anderson Cancer Center.  They asked Baggerly's group to evaluate this new tool.
 
-What Baggerly found was poor data analysis as several steps along the way.  Easy things like mis-labeling of data.  This caused patients to not get the drugs that it is predicted their cancer would respond best to!
+What Baggerly found was poor data analysis as several steps along the way.  Easy things like miss labeling of data.  This caused patients to not get the drugs that it is predicted their cancer would respond best to!
 
 "Intuition in high through put biology is poor" -Keith Baggerly 
 
@@ -56,7 +56,7 @@ In other words... we need impartial engineers who care deeply about the process 
 *** =pnotes
 Their theory was sound  
 the source data was good  
-Humans are ppor furtone tellers   
+Humans are poor fortune tellers   
   
 Off my soap box and on to the good stuff
 
@@ -74,7 +74,7 @@ Off my soap box and on to the good stuff
 
 *** =pnotes
 Good for newbie programmers, but can be harder for others  
-Not written as a programming lanuage first, but an interactive environemnet first.
+Not written as a programming language first, but an interactive environment first.
 
 
 ---
@@ -88,9 +88,9 @@ Not written as a programming lanuage first, but an interactive environemnet firs
 * Frequent releases (annual + bugfix releases); active development.
 
 *** =pnotes
-Mathematicns of New Zealand  
-Mathematicns not computer scienctists  
-Apple OS does have some functional differnce with Windows  
+Mathematics of New Zealand  
+Mathematics not computer scientists  
+Apple OS does have some functional difference with Windows  
 
 ---
 
@@ -98,7 +98,7 @@ Apple OS does have some functional differnce with Windows
 
 * R comes with an IDE.  Its not bad.
 
-* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features, simialr to a scaled down visual studion, like syntax highlighting, auto completion and integrated help.  
+* Recommend RStudio. It's <b>`free`</b> and includes a lot of great features, similar to a scaled down visual studio, like syntax highlighting, auto completion and integrated help.  
   [http://www.rstudio.com/](http://www.rstudio.com/)
 
 *** =pnotes
@@ -113,7 +113,7 @@ x<- 1
 
 ```
 
-The assignment operator is an "<-".  You can read it as "x get's 1
+The assignment operator is an "<-".  You can read it as "x gets 1"
 
 ```{r}
 1 -> x #is also valid
@@ -121,7 +121,7 @@ The assignment operator is an "<-".  You can read it as "x get's 1
 ```
 
 *** =pnotes
-highlighy inflinced by mathematicns
+highlight influenced by mathematics
 
 ---
 
@@ -137,13 +137,13 @@ assign function
 assign("x", 1)
 ```
 
-This leads me to the first thing that i learned the hard way about R. `There are at least 3 ways to do any one thing in R and they each work in "most" contexts.`
+This leads me to the first thing that I learned the hard way about R. `There are at least 3 ways to do any one thing in R and they each work in "most" contexts.`
 
 ---
 
 ## Auto print
 
-To print out out value of x:
+To print out value of x:
 
 ```{r}
 x<- 10
@@ -168,14 +168,15 @@ R has five basic classes of objects:
 * integer
 * complex
 * logical (True/False)
+And..
 * Factors
 
 A vector can only contain objects of the same class
 
 *** =pnotes
-complex = imaganiary numbers  
+complex = imaginary numbers  
 list objects = lists are generic vectors where objects don't have to be the same type  
-Factors are not first class citzens in R  
+Factors are not first class citizens in R  
 A "factor" is a vector whose elements can take on one of a specific set of values. For example, "Sex" will usually take on only the values "M" or "F," whereas "Name" will generally have lots of possibilities. The set of values that the elements of a factor can take are called its levels.
 
 
@@ -205,7 +206,7 @@ A data frame for all intents and purposes is a table.
 * Each column has the same length
 * Columns can have labels
 
-Let's Check out one of the the sample datasets in R: mtCars
+Let's Check out one of the sample datasets in R: mtCars
 
 ---
 
@@ -269,7 +270,7 @@ Quick review of terms form the summary:
 *** =pnotes
 obvious min and max  
 
-2nd most impartant thing i have learned.  R is writtne assuming tou are a fluent statistican. (I am not so there is alot of learning)
+2nd most important thing I have learned.  R is written assuming you are a fluent statistician. (I am not so there is a lot of learning)
 
 
 ---
@@ -308,9 +309,9 @@ Perfect!  That matches the summary value of 20.09
 
 ## Packages
 
- * Packages extend the funcationality of R.  
+ * Packages extend the functionality of R.  
 
-> * They an be equaited to libraries in .Net
+> * They can be equated to libraries in .Net
 
 > * There are currently packages available on the cran 6,587
 
@@ -319,6 +320,40 @@ Perfect!  That matches the summary value of 20.09
 > * load the package into memory when you need to use it: library(packageName)  
 
 > * Packages may ned to be updated as R upgrades
+
+---
+
+## NA
+
+* When a value in a column is blank.
+* We can equate them to null values.
+* Us the function is.na(vector) to find the na's
+* is.na returns a Boolean vector of true and false for is the values is na or not
+* can use sum to get a count of na's because true = 1 and false = 0
+
+```{r}
+x<- c(5, NA, 6, 10, 11)
+
+is.na(x)
+
+sum(is.na(x))
+```
+
+---
+
+## NA
+
+* some function have trouble with na's so you must tell them what to do with the Na's
+
+
+```{r}
+x<- c(5, NA, 6, 10, 11)
+
+mean(x)
+
+mean(x, na.rm = TRUE)
+
+```
 
 ---
 
@@ -341,9 +376,9 @@ Steps: 1. set the working directory
 
 ## Reusable scripts
 
-Now lets say I am interested in what countries the  over 60 crowd are in.
+Now let's say I am interested in what countries the over 60 crowd are in.
 
-Demo the reusabel script functions.
+Demo the reusable script functions.
 
 *** =pnotes
 Point out:
@@ -356,13 +391,9 @@ Point out:
 
 ---
 
-## NA
-
----
-
 ## lapply, sapply, tapply
 
-looping is great, but R is an interactive lanuage, for loops in the console would be hard, what's a statiscan to do?
+looping is great, but R is an interactive language, for loops in the console would be hard, what's a statistician to do?
 
 To the rescue... the applies!
 
@@ -379,7 +410,7 @@ demo
 
 ---
 
-## Scopping and free varibles in R
+## Scoping and free variables in R
 
 
 Consider the function:
@@ -397,7 +428,7 @@ demo
 
 ---
 
-## Scopping and free varibles in R
+## Scoping and free variables in R
 
 When R tries to bind a value to a symbol, it searches through a series of `environments` to find the appropriate value. When you are working on the command line and need to retrieve the value of an R object, the order is roughly
 
@@ -429,5 +460,4 @@ The search list can be found by using the `search` function.
 ---
 ## Questions?
 
-Feel free to contact me nad I will help if I can! eagroom@yahoo.com
-
+Feel free to contact me and I will help if I can! eagroom@yahoo.com
