@@ -7,8 +7,6 @@ setwd("C:\\Users\\Elizabeth\\Documents\\IntroToR\\IntroToRPresentation")
 surveyResults<-read.csv("Full Results - Stack Overflow Developer Survey - 2015.csv")
 str(surveyResults)
 
-#how many repsondants didn't submit an age
-sum(is.na(surveyResults$Age))
 
 #age is a factor so we have to convert so lets take a look at the levels
 levels(surveyResults$Age)

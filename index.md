@@ -531,8 +531,7 @@ demo
 
 Consider the function:
 
-
-```r
+```{R}
 f <- function(x, y) {
   x + y - z
 }

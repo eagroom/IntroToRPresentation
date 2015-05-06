@@ -9,14 +9,3 @@ library(devtools)
 library(slidify)
 
 slidify("index.Rmd")
-
-todo:
-  lapply, tapply expample
-na example
-formatting
-spell check
-review demos
-
-remove na?
-remove lapply, sapply ect.?
----

@@ -1,14 +1,5 @@
-x<-1:5, 1:5
-lapply(x, sum)
+x <- list(a = 1:5, b = 1:10, c = 1:15, d = 1:20)
 
+lapply(x, mean)
 
-myFunc <- function(X, numberToAdd)
-{
-  x + numberToAdd
-}
-  
-
-testFunc <- function(b)
-{
-    [b] + 10
-}
+sapply(x, mean)
