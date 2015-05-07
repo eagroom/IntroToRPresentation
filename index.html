@@ -105,6 +105,9 @@ I think data science is important and it will become more important</p>
 the source data was good<br>
 Humans are poor fortune tellers   </p>
 
+<p>implement all the good process we as software engineers have discovered along the way:
+Pair programming, code reviews, unit tests, test driven development, open source software -&gt; open source equations</p>
+
 <p>Off my soap box and on to the good stuff</p>
 
     </section>
@@ -131,7 +134,8 @@ Humans are poor fortune tellers   </p>
   <aside class="note" id="">
     <section>
       <p>Good for newbie programmers, but can be harder for others<br>
-Not written as a programming language first, but an interactive environment first.</p>
+Not written as a programming language first, but an interactive environment first.
+this history give us context as we try to figure out how to use the system</p>
 
     </section>
   </aside>
@@ -206,7 +210,7 @@ Apple OS does have some functional difference with Windows  </p>
 
 <slide class="" id="slide-8" style="background:;">
   <hgroup>
-    <h2>Two more ways to Assign variables</h2>
+    <h2>Two more ways to assign variables</h2>
   </hgroup>
   <article data-timings="">
     <p>&quot;=&quot;.  Works in &quot;most&quot; contexts</p>
@@ -269,7 +273,7 @@ x
 <li>integer</li>
 <li>complex</li>
 <li>logical (True/False)
-And..</li>
+And...</li>
 <li>Factors</li>
 </ul>
 
@@ -280,7 +284,7 @@ And..</li>
   <aside class="note" id="">
     <section>
       <p>complex = imaginary numbers<br>
-list objects = lists are generic vectors where objects don&#39;t have to be the same type<br>
+list objects = lists are collections of vectors where objects don&#39;t have to be the same type<br>
 Factors are not first class citizens in R<br>
 A &quot;factor&quot; is a vector whose elements can take on one of a specific set of values. For example, &quot;Sex&quot; will usually take on only the values &quot;M&quot; or &quot;F,&quot; whereas &quot;Name&quot; will generally have lots of possibilities. The set of values that the elements of a factor can take are called its levels.</p>
 
@@ -570,7 +574,7 @@ sumMPG/lengthMPG
 <li>When a value in a column is blank.</li>
 <li>We can equate them to null values.</li>
 <li>Us the function is.na(vector) to find the na&#39;s</li>
-<li>is.na returns a Boolean vector of true and false for is the values is na or not</li>
+<li>is.na returns a Boolean vector of true and false for if the values is na or not</li>
 <li>can use sum to get a count of na&#39;s because true = 1 and false = 0</li>
 </ul>
 
@@ -624,7 +628,7 @@ mean(x)
     <h2>A real Data set</h2>
   </hgroup>
   <article data-timings="">
-    <p>Let&#39;s take a look at the survey results from the 2015 
+    <p>Let&#39;s take a look at the stack overflow developer survey results from the 2015 
 <a href="http://stackoverflow.com/research/developer-survey-2015">Stack overflow Developer Survey</a></p>
 
 <p>Demo of using the Console</p>
@@ -674,15 +678,17 @@ mean(x)
     <h2>lapply, sapply, tapply</h2>
   </hgroup>
   <article data-timings="">
-    <p>looping is great, but R is an interactive language, for loops in the console would be hard, what&#39;s a statistician to do?</p>
+    <p>looping is great, but R is an interactive language, multi-line loops in the console would be hard, what&#39;s a statistician to do?</p>
 
 <p>To the rescue... the applies!</p>
 
-<p class=''>lapply(): Loop over a list and evaluate a function on each element<br>
-. sapply(): Same as lapply but try to simplify the result<br>
-. apply(): Apply a function over the margins of an array<br>
-. tapply(): Apply a function over subsets of a vector<br>
-. mapply(): Multivariate version of lapply  </p>
+<ul>
+<li>lapply(): Loop over a list and evaluate a function on each element<br></li>
+<li>sapply(): Same as lapply but try to simplify the result<br></li>
+<li>apply(): Apply a function over the margins of an array<br></li>
+<li>tapply(): Apply a function over subsets of a vector<br></li>
+<li>mapply(): Multivariate version of lapply<br></li>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -702,7 +708,7 @@ demo</p>
   <article data-timings="">
     <p>Consider the function:</p>
 
-<pre><code class="R">f &lt;- function(x, y) {
+<pre><code class="r">f &lt;- function(x, y) {
   x + y - z
 }
 </code></pre>
@@ -750,6 +756,12 @@ demo</p>
 
   </article>
   <!-- Presenter Notes -->
+  <aside class="note" id="">
+    <section>
+      <p>up for the challenge</p>
+
+    </section>
+  </aside>
 </slide>
 
 <slide class="" id="slide-30" style="background:;">
@@ -833,7 +845,7 @@ demo</p>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=8 title='Two more ways to Assign variables'>
+        data-slide=8 title='Two more ways to assign variables'>
          8
       </a>
     </li>

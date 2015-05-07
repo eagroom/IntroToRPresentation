@@ -57,6 +57,9 @@ In other words... we need impartial engineers who care deeply about the process 
 Their theory was sound  
 the source data was good  
 Humans are poor fortune tellers   
+
+implement all the good process we as software engineers have discovered along the way:
+Pair programming, code reviews, unit tests, test driven development, open source software -> open source equations
   
 Off my soap box and on to the good stuff
 
@@ -75,7 +78,7 @@ Off my soap box and on to the good stuff
 *** =pnotes
 Good for newbie programmers, but can be harder for others  
 Not written as a programming language first, but an interactive environment first.
-
+this history give us context as we try to figure out how to use the system
 
 ---
 
@@ -125,7 +128,7 @@ highlight influenced by mathematics
 
 ---
 
-## Two more ways to Assign variables
+## Two more ways to assign variables
 
 "=".  Works in "most" contexts
 
@@ -175,17 +178,16 @@ R has five basic classes of objects:
 * integer
 * complex
 * logical (True/False)
-And..
+And...
 * Factors
 
 A vector can only contain objects of the same class
 
 *** =pnotes
 complex = imaginary numbers  
-list objects = lists are generic vectors where objects don't have to be the same type  
+list objects = lists are collections of vectors where objects don't have to be the same type  
 Factors are not first class citizens in R  
 A "factor" is a vector whose elements can take on one of a specific set of values. For example, "Sex" will usually take on only the values "M" or "F," whereas "Name" will generally have lots of possibilities. The set of values that the elements of a factor can take are called its levels.
-
 
 ---
 
@@ -423,7 +425,7 @@ Perfect!  That matches the summary value of 20.09
 * When a value in a column is blank.
 * We can equate them to null values.
 * Us the function is.na(vector) to find the na's
-* is.na returns a Boolean vector of true and false for is the values is na or not
+* is.na returns a Boolean vector of true and false for if the values is na or not
 * can use sum to get a count of na's because true = 1 and false = 0
 
 
@@ -475,7 +477,7 @@ mean(x, na.rm = TRUE)
 
 ## A real Data set
 
-Let's take a look at the survey results from the 2015 
+Let's take a look at the stack overflow developer survey results from the 2015 
 [Stack overflow Developer Survey](http://stackoverflow.com/research/developer-survey-2015)
 
 Demo of using the Console
@@ -509,15 +511,15 @@ Point out:
 
 ## lapply, sapply, tapply
 
-looping is great, but R is an interactive language, for loops in the console would be hard, what's a statistician to do?
+looping is great, but R is an interactive language, multi-line loops in the console would be hard, what's a statistician to do?
 
 To the rescue... the applies!
 
-. lapply(): Loop over a list and evaluate a function on each element  
-. sapply(): Same as lapply but try to simplify the result  
-. apply(): Apply a function over the margins of an array  
-. tapply(): Apply a function over subsets of a vector  
-. mapply(): Multivariate version of lapply  
+* lapply(): Loop over a list and evaluate a function on each element  
+* sapply(): Same as lapply but try to simplify the result  
+* apply(): Apply a function over the margins of an array  
+* tapply(): Apply a function over subsets of a vector  
+* mapply(): Multivariate version of lapply  
 
 
 *** =pnotes
@@ -531,7 +533,8 @@ demo
 
 Consider the function:
 
-```{R}
+
+```r
 f <- function(x, y) {
   x + y - z
 }
@@ -539,6 +542,7 @@ f <- function(x, y) {
 This function has 2 formal arguments x and y. In the body of the function there is another symbol z. In this case z is called a `free variable`. The scoping rules of a language determine how values are assigned to free variables. `R uses lexical scoping.` 
 
 Free variables are not formal arguments and are not local variables. The values of free variables are searched for in the environment in which the function was defined.
+
 *** =pnotes
 demo
 
@@ -560,6 +564,9 @@ The search list can be found by using the `search` function.
  "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well..."
  
  -[Laran Joseph](https://blog.udemy.com/r-tutorial)
+
+*** =pnotes
+up for the challenge
 
 ---
 
