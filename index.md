@@ -23,9 +23,12 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 `presentation built using slidfy in R` 
 
 *** =pnotes
-11 years at Cartegraph
-jave script (knockout) application with a  c# back end
-I think data science is important and it will become more important
+11 years at Cartegraph  
+java script (knockout) application with a c# backend  
+I think data science is important and it will become more important  
+
+no real qualifications for this presenation other than  
+taking the coursera data science specialization  
 
 --- 
 
@@ -58,10 +61,9 @@ Their theory was sound
 the source data was good  
 Humans are poor fortune tellers   
 
-implement all the good process we as software engineers have discovered along the way:
-Pair programming, code reviews, unit tests, test driven development, open source software -> open source equations
-  
-Off my soap box and on to the good stuff
+implement all the good process we as software engineers have discovered along the way:  
+Pair programming, code reviews, unit tests, test driven development, open source software -> open source   equations  
+Off my soap box and on to the good stuff  
 
 ---
 
@@ -77,8 +79,8 @@ Off my soap box and on to the good stuff
 
 *** =pnotes
 Good for newbie programmers, but can be harder for others  
-Not written as a programming language first, but an interactive environment first.
-this history give us context as we try to figure out how to use the system
+Not written as a programming language first, but an interactive environment first.   
+this history give us context as we try to figure out how to use the system  
 
 ---
 
@@ -124,7 +126,7 @@ The assignment operator is an "<-".  You can read it as "x gets 1"
 ```
 
 *** =pnotes
-highlight influenced by mathematics
+highlight influenced by mathematics  
 
 ---
 
@@ -177,8 +179,8 @@ R has five basic classes of objects:
 * numeric (real numbers)
 * integer
 * complex
-* logical (True/False)
-And...
+* logical (True/False)  
+And...  
 * Factors
 
 A vector can only contain objects of the same class
@@ -352,7 +354,6 @@ obvious min and max
 
 2nd most important thing I have learned.  R is written assuming you are a fluent statistician. (I am not so there is a lot of learning)
 
-
 ---
 
 ## Data frames
@@ -483,7 +484,7 @@ Let's take a look at the stack overflow developer survey results from the 2015
 Demo of using the Console
 
 *** =pnotes
-Steps: 1. set the working directory  
+show: 1. set the working directory  
   point out: escape back slashes with double slashes like in c# or use the /  
 2. read the data from the file    3. show the environment variables  
 4. show the quick text with tab   5. factors  
