@@ -203,6 +203,47 @@ x<-10L
 
 ---
 
+## Vector Math
+
+The fact that Vectors are the simplest structure makes vector math intrinsic to the application.
+
+```{r}
+x<-sample(1:20, 5)
+x
+
+x - 4
+```
+
+*** =pnotes
+since in R we are generally always working with a set of data, it becomes truly awesome that vectors are the simplest object  
+
+note on notation:  
+1:20 give me the range between 1 and 20 and it gives me random 5 objects from that sample  
+to get random numbers use: rnorm(n, mean = 0, sd = 1)  
+  rnorm = set of random numbered from the normal distribution with a mean of 0 and standard deviation of 1  
+
+---
+
+## Vector Math
+
+The previous exmaple might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model
+
+```{r}
+#center the data by subtracting the mean
+xc<-x-mean(x)
+
+#scale the data by dividing by the standard deviation
+xn<-xc/sd(x)
+
+xn
+```
+
+*** =pnotes
+The process of centering then scaling the data is called "normalizing" the data  
+normalized data has a mean of 0 and a standard deviation of 1  
+
+---
+
 ## Data frames - The most useful object
 
 A data frame for all intents and purposes is a table.
