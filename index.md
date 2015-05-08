@@ -231,7 +231,7 @@ x
 ```
 
 ```
-## [1] 18  5 16  1 12
+## [1] 17  3  6 10 12
 ```
 
 ```r
@@ -239,7 +239,7 @@ x - 4
 ```
 
 ```
-## [1] 14  1 12 -3  8
+## [1] 13 -1  2  6  8
 ```
 
 *** =pnotes
@@ -268,7 +268,7 @@ xn
 ```
 
 ```
-## [1]  1.0509033 -0.7466944  0.7743498 -1.2998014  0.2212428
+## [1]  1.36709253 -1.21929874 -0.66507204  0.07389689  0.44338136
 ```
 
 *** =pnotes
@@ -591,8 +591,7 @@ demo
 
 Consider the function:
 
-
-```r
+```{R}
 f <- function(x, y) {
   x + y - z
 }
@@ -641,4 +640,7 @@ up for the challenge
 ---
 ## Questions?
 
-Feel free to contact me and I will help if I can! eagroom@yahoo.com
+Feel free to contact me and I will help if I can!  
+
+email me: eagroom@yahoo.com  
+find this presentation on github at: [https://github.com/eagroom/IntroToRPresentation] (https://github.com/eagroom/IntroToRPresentation)  

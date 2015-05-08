@@ -508,4 +508,7 @@ up for the challenge
 ---
 ## Questions?
 
-Feel free to contact me and I will help if I can! eagroom@yahoo.com
+Feel free to contact me and I will help if I can!  
+
+email me: eagroom@yahoo.com  
+find this presentation on github at: [https://github.com/eagroom/IntroToRPresentation] (https://github.com/eagroom/IntroToRPresentation)  
