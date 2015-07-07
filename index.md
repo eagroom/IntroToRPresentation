@@ -27,7 +27,7 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 java script (knockout) application with a c# backend  
 I think data science is important and it will become more important  
 
-no real qualifications for this presenation other than  
+no real qualifications for this presentation other than  
 taking the coursera data science specialization  
 
 --- 
@@ -54,7 +54,7 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 
 "Intuition in high through put biology is poor" -Keith Baggerly 
 
-In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw acurate conclusions.
+In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.
  
 *** =pnotes
 Their theory was sound  
@@ -231,7 +231,7 @@ x
 ```
 
 ```
-## [1] 17  3  6 10 12
+## [1]  8 17  9  1  4
 ```
 
 ```r
@@ -239,7 +239,7 @@ x - 4
 ```
 
 ```
-## [1] 13 -1  2  6  8
+## [1]  4 13  5 -3  0
 ```
 
 *** =pnotes
@@ -254,7 +254,7 @@ to get random numbers use: rnorm(n, mean = 0, sd = 1)
 
 ## Vector Math
 
-The previous exmaple might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model
+The previous example might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model
 
 
 ```r
@@ -268,7 +268,7 @@ xn
 ```
 
 ```
-## [1]  1.36709253 -1.21929874 -0.66507204  0.07389689  0.44338136
+## [1]  0.03301391  1.51863986  0.19808346 -1.12247294 -0.62726429
 ```
 
 *** =pnotes
@@ -403,7 +403,7 @@ Quick review of terms form the summary:
 
 * 1st Qu. = the first quantile- means 25% observations are below this   
 * 3rd Qu. = the third quantile - means 75% observations are below this  
-* Median = The middle point. Half the numbers are above this value  
+* Median = the middle point. Half the numbers are above this value  
 * Mean = average  
 
 *** =pnotes
@@ -443,7 +443,7 @@ sumMPG/lengthMPG
 ```
 
 *** =pnotes
-point our the items numbers in the row wrapping [15], 10.4 is the 15th element
+point out the items numbers in the row wrapping [15], 10.4 is the 15th element
 
 ---
 
@@ -474,7 +474,7 @@ Perfect!  That matches the summary value of 20.09
 
 > * load the package into memory when you need to use it: library(packageName)  
 
-> * Packages may ned to be updated as R upgrades
+> * Packages may need to be updated as R upgrades
 
 ---
 
@@ -591,7 +591,8 @@ demo
 
 Consider the function:
 
-```{R}
+
+```r
 f <- function(x, y) {
   x + y - z
 }

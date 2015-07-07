@@ -61,7 +61,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
 java script (knockout) application with a c# backend<br>
 I think data science is important and it will become more important  </p>
 
-<p>no real qualifications for this presenation other than<br>
+<p>no real qualifications for this presentation other than<br>
 taking the coursera data science specialization  </p>
 
     </section>
@@ -98,7 +98,7 @@ taking the coursera data science specialization  </p>
 
 <p>&quot;Intuition in high through put biology is poor&quot; -Keith Baggerly </p>
 
-<p>In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw acurate conclusions.</p>
+<p>In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -331,13 +331,13 @@ A &quot;factor&quot; is a vector whose elements can take on one of a specific se
 x
 </code></pre>
 
-<pre><code>## [1] 17  3  6 10 12
+<pre><code>## [1]  8 17  9  1  4
 </code></pre>
 
 <pre><code class="r">x - 4
 </code></pre>
 
-<pre><code>## [1] 13 -1  2  6  8
+<pre><code>## [1]  4 13  5 -3  0
 </code></pre>
 
   </article>
@@ -360,7 +360,7 @@ to get random numbers use: rnorm(n, mean = 0, sd = 1)<br>
     <h2>Vector Math</h2>
   </hgroup>
   <article data-timings="">
-    <p>The previous exmaple might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model</p>
+    <p>The previous example might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model</p>
 
 <pre><code class="r">#center the data by subtracting the mean
 xc&lt;-x-mean(x)
@@ -371,7 +371,7 @@ xn&lt;-xc/sd(x)
 xn
 </code></pre>
 
-<pre><code>## [1]  1.36709253 -1.21929874 -0.66507204  0.07389689  0.44338136
+<pre><code>## [1]  0.03301391  1.51863986  0.19808346 -1.12247294 -0.62726429
 </code></pre>
 
   </article>
@@ -542,7 +542,7 @@ normalized data has a mean of 0 and a standard deviation of 1  </p>
 <ul>
 <li>1st Qu. = the first quantile- means 25% observations are below this<br></li>
 <li>3rd Qu. = the third quantile - means 75% observations are below this<br></li>
-<li>Median = The middle point. Half the numbers are above this value<br></li>
+<li>Median = the middle point. Half the numbers are above this value<br></li>
 <li>Mean = average<br></li>
 </ul>
 
@@ -588,7 +588,7 @@ sumMPG/lengthMPG
   <!-- Presenter Notes -->
   <aside class="note" id="">
     <section>
-      <p>point our the items numbers in the row wrapping [15], 10.4 is the 15th element</p>
+      <p>point out the items numbers in the row wrapping [15], 10.4 is the 15th element</p>
 
     </section>
   </aside>
@@ -625,7 +625,7 @@ sumMPG/lengthMPG
 <li><p>There are currently packages available on the cran 6,587</p></li>
 <li><p>first time you access a package you need to install it: install.packages(&quot;packageName&quot;)</p></li>
 <li><p>load the package into memory when you need to use it: library(packageName)  </p></li>
-<li><p>Packages may ned to be updated as R upgrades</p></li>
+<li><p>Packages may need to be updated as R upgrades</p></li>
 </ul>
 
   </article>
@@ -775,7 +775,7 @@ demo</p>
   <article data-timings="">
     <p>Consider the function:</p>
 
-<pre><code class="R">f &lt;- function(x, y) {
+<pre><code class="r">f &lt;- function(x, y) {
   x + y - z
 }
 </code></pre>
