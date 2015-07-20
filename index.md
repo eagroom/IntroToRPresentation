@@ -22,14 +22,6 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 
 `presentation built using slidfy in R` 
 
-*** =pnotes
-11 years at Cartegraph  
-java script (knockout) application with a c# backend  
-I think data science is important and it will become more important  
-
-no real qualifications for this presentation other than  
-taking the coursera data science specialization  
-
 --- 
 
 ## Why this is important
@@ -55,15 +47,6 @@ What Baggerly found was poor data analysis as several steps along the way.  Easy
 "Intuition in high through put biology is poor" -Keith Baggerly 
 
 In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.
- 
-*** =pnotes
-Their theory was sound  
-the source data was good  
-Humans are poor fortune tellers   
-
-implement all the good process we as software engineers have discovered along the way:  
-Pair programming, code reviews, unit tests, test driven development, open source software -> open source   equations  
-Off my soap box and on to the good stuff  
 
 ---
 
@@ -77,11 +60,6 @@ Off my soap box and on to the good stuff
 
 > * "[W]e wanted users to be able to begin in an <b>interactive</b> environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to <b>slide gradually into programming</b>, when the language and system aspects would become more important." John Chambers
 
-*** =pnotes
-Good for newbie programmers, but can be harder for others  
-Not written as a programming language first, but an interactive environment first.   
-this history give us context as we try to figure out how to use the system  
-
 ---
 
 ## What is R Cont.
@@ -92,11 +70,6 @@ this history give us context as we try to figure out how to use the system
 
 * Frequent releases (annual + bugfix releases); active development.
 
-*** =pnotes
-Mathematics of New Zealand  
-Mathematics not computer scientists  
-Apple OS does have some functional difference with Windows  
-
 ---
 
 ## The Tools
@@ -105,9 +78,6 @@ Apple OS does have some functional difference with Windows
 
 * Recommend RStudio. It's <b>`free`</b> and includes a lot of great features, similar to a scaled down visual studio, like syntax highlighting, auto completion and integrated help.  
   [http://www.rstudio.com/](http://www.rstudio.com/)
-
-*** =pnotes
-Show R and Rstudio
 
 ---
 
@@ -124,9 +94,6 @@ The assignment operator is an "<-".  You can read it as "x gets 1"
 ```r
 1 -> x #is also valid
 ```
-
-*** =pnotes
-highlight influenced by mathematics  
 
 ---
 
@@ -185,12 +152,6 @@ And...
 
 A vector can only contain objects of the same class
 
-*** =pnotes
-complex = imaginary numbers  
-list objects = lists are collections of vectors where objects don't have to be the same type  
-Factors are not first class citizens in R  
-A "factor" is a vector whose elements can take on one of a specific set of values. For example, "Sex" will usually take on only the values "M" or "F," whereas "Name" will generally have lots of possibilities. The set of values that the elements of a factor can take are called its levels.
-
 ---
 
 ## Vectors
@@ -231,7 +192,7 @@ x
 ```
 
 ```
-## [1]  8 17  9  1  4
+## [1] 19  3 11  5 13
 ```
 
 ```r
@@ -239,16 +200,8 @@ x - 4
 ```
 
 ```
-## [1]  4 13  5 -3  0
+## [1] 15 -1  7  1  9
 ```
-
-*** =pnotes
-since in R we are generally always working with a set of data, it becomes truly awesome that vectors are the simplest object  
-
-note on notation:  
-1:20 give me the range between 1 and 20 and it gives me random 5 objects from that sample  
-to get random numbers use: rnorm(n, mean = 0, sd = 1)  
-  rnorm = set of random numbered from the normal distribution with a mean of 0 and standard deviation of 1  
 
 ---
 
@@ -268,12 +221,8 @@ xn
 ```
 
 ```
-## [1]  0.03301391  1.51863986  0.19808346 -1.12247294 -0.62726429
+## [1]  1.3709893 -1.1217185  0.1246354 -0.8101300  0.4362239
 ```
-
-*** =pnotes
-The process of centering then scaling the data is called "normalizing" the data  
-normalized data has a mean of 0 and a standard deviation of 1  
 
 ---
 
@@ -323,9 +272,6 @@ tail(mtcars, 4)
 ## Volvo 142E     21.4   4  121 109 4.11 2.78 18.6  1  1    4    2
 ```
 
-*** =pnotes
-one way of setting the optional parameter, could also have done tail(mtcars, n=4)
-
 ---
 
 
@@ -353,10 +299,6 @@ str(mtcars)
 ##  $ gear: num  4 4 4 3 3 3 3 4 4 4 ...
 ##  $ carb: num  4 4 1 1 2 1 4 2 2 4 ...
 ```
-
-*** =pnotes
-the meta data for the columns  
-11 columns and 32 rows  
 
 ---
 
@@ -392,9 +334,6 @@ summary(mtcars)
 ##  Max.   :1.0000   Max.   :5.000   Max.   :8.000
 ```
 
-*** =pnotes
-word wrapping
-
 ---
 
 ## Data frames 
@@ -405,11 +344,6 @@ Quick review of terms form the summary:
 * 3rd Qu. = the third quantile - means 75% observations are below this  
 * Median = the middle point. Half the numbers are above this value  
 * Mean = average  
-
-*** =pnotes
-obvious min and max  
-
-2nd most important thing I have learned.  R is written assuming you are a fluent statistician. (I am not so there is a lot of learning)
 
 ---
 
@@ -442,9 +376,6 @@ sumMPG/lengthMPG
 ## [1] 20.09062
 ```
 
-*** =pnotes
-point out the items numbers in the row wrapping [15], 10.4 is the 15th element
-
 ---
 
 ## Data frames
@@ -468,7 +399,7 @@ Perfect!  That matches the summary value of 20.09
 
 > * They can be equated to libraries in .Net
 
-> * There are currently packages available on the cran 6,587
+> * There are currently packages available on the cran 6,871
 
 > * first time you access a package you need to install it: install.packages("packageName")
 
@@ -540,14 +471,6 @@ Let's take a look at the stack overflow developer survey results from the 2015
 
 Demo of using the Console
 
-*** =pnotes
-show: 1. set the working directory  
-  point out: escape back slashes with double slashes like in c# or use the /  
-2. read the data from the file    3. show the environment variables  
-4. show the quick text with tab   5. factors  
-7. packages                       8. help                 9. ...parameter  
-10. optional parameters  
-
 ---
 
 ## Reusable scripts
@@ -555,15 +478,6 @@ show: 1. set the working directory
 Now let's say I am interested in what countries the over 60 crowd are in.
 
 Demo the reusable script functions.
-
-*** =pnotes
-Point out:
-1. comments  
-2, in a rerun script use function require  
-3, method returns  
-4, looping  
-5. sourcing the script  
-6. functions are treated like any other object  
 
 ---
 
@@ -578,11 +492,6 @@ To the rescue... the applies!
 * apply(): Apply a function over the margins of an array  
 * tapply(): Apply a function over subsets of a vector  
 * mapply(): Multivariate version of lapply  
-
-
-*** =pnotes
-sapply returns a vector, lapply returns a list  
-demo
 
 ---
 
@@ -600,9 +509,6 @@ f <- function(x, y) {
 This function has 2 formal arguments x and y. In the body of the function there is another symbol z. In this case z is called a `free variable`. The scoping rules of a language determine how values are assigned to free variables. `R uses lexical scoping.` 
 
 Free variables are not formal arguments and are not local variables. The values of free variables are searched for in the environment in which the function was defined.
-
-*** =pnotes
-demo
 
 ---
 
@@ -622,9 +528,6 @@ The search list can be found by using the `search` function.
  "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well..."
  
  -[Laran Joseph](https://blog.udemy.com/r-tutorial)
-
-*** =pnotes
-up for the challenge
 
 ---
 
