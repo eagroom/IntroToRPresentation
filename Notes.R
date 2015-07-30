@@ -18,3 +18,14 @@ ADding on to presentation:
 
 
 Edward Tufty: http://www.edwardtufte.com/tufte/courses
+
+Here are just a few examples:
+  
+  Google uses R to calculate the ROI on advertising campaigns.
+Ford uses R to improve the design of its vehicles.
+Twitter uses R to monitor user experience.
+The US National Weather Service uses R to predict severe flooding.
+The Rockefeller Institute of Government uses R to develop models for simulating the finances of public pension funds.
+The Human Rights Data Analysis Group uses R to quantify the impact of war.
+R is used frequently by The New York Times to create infographics and interactive data journalism applications.
+http://opensource.com/business/14/12/r-open-source-language-data-science
