@@ -59,16 +59,16 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
 
 <slide class="" id="slide-2" style="background:;">
   <hgroup>
-    <h2>Why this is important</h2>
+    <h2>Why data analytics is important</h2>
   </hgroup>
   <article data-timings="">
     <p>Consider the case study presented by Keith Baggerly <a href="http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/">The Anil Potti Story</a></p>
 
 <p>Article: &quot;<a href="http://www.nature.com/nm/journal/v12/n11/abs/nm1491.html">Genomic signatures to guide the use of chemotherapeutics.</a>&quot;
-  Auther: Potti et al (2006), 
+  Author: Potti et al (2006), 
   Magazine: Nature Medicine, 12:1294-1300</p>
 
-<p>The idea is they developed a tool that can be used to predict weather a patient will respond to chemotherapies by knowing what drugs are most effective against which cells.  </p>
+<p>They developed a statistical tool that can be used to predict weather a patient will respond to chemotherapies by knowing what drugs are most effective against which cells.  </p>
 
 <p><b>Amazing!</b></p>
 
@@ -78,16 +78,18 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
 
 <slide class="" id="slide-3" style="background:;">
   <hgroup>
-    <h2>Why Cont.</h2>
+    <h2>Why this is important</h2>
   </hgroup>
   <article data-timings="">
     <p>This was very exciting to the MD Anderson Cancer Center.  They asked Baggerly&#39;s group to evaluate this new tool.</p>
 
-<p>What Baggerly found was poor data analysis as several steps along the way.  Easy things like miss labeling of data.  This caused patients to not get the drugs that it is predicted their cancer would respond best to!</p>
+<p>What Baggerly found was poor data analysis at several steps along the way.  Easy things like miss labeling of data and an off by one row error.  </p>
+
+<p>This caused patient&#39;s in the clinical trial to not get the drugs that it was predicted their cancer would respond best to! The clinical trial was stopped in it tracks.</p>
 
 <p>&quot;Intuition in high through put biology is poor&quot; -Keith Baggerly </p>
 
-<p>In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.</p>
+<p>In other words... (I believe) we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -99,13 +101,9 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
   </hgroup>
   <article data-timings="">
     <ul>
-<li>R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language <code>plus a run-time environment with graphics</code>, a debugger, and the ability to run programs stored in script files. It is open source.</li>
-</ul>
-
-<ul class = "build incremental">
-<li><p>R is a dialect of the S language.</p></li>
-<li><p>S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)</p></li>
-<li><p>&quot;[W]e wanted users to be able to begin in an <b>interactive</b> environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to <b>slide gradually into programming</b>, when the language and system aspects would become more important.&quot; John Chambers</p></li>
+<li><p>R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language <code>plus a run-time environment with graphics</code>, a debugger, and the ability to run programs stored in script files. It is open source.</p></li>
+<li><p>Runs on almost any standard computing platform/OS (even on the PlayStation 3)</p></li>
+<li><p>Frequent releases (annual + bugfix releases); active development.</p></li>
 </ul>
 
   </article>
@@ -114,13 +112,17 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
 
 <slide class="" id="slide-5" style="background:;">
   <hgroup>
-    <h2>What is R Cont.</h2>
+    <h2>A little history</h2>
   </hgroup>
   <article data-timings="">
     <ul>
-<li><p>In 1991 Ross Ihaka and Robert Gentleman created R</p></li>
-<li><p>Runs on almost any standard computing platform/OS (even on the PlayStation 3)</p></li>
-<li><p>Frequent releases (annual + bugfix releases); active development.</p></li>
+<li>In 1991 Ross Ihaka and Robert Gentleman created R</li>
+</ul>
+
+<ul class = "build incremental">
+<li><p>R is a dialect of the S language.</p></li>
+<li><p>S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)</p></li>
+<li><p>&quot;[W]e wanted users to be able to begin in an <b>interactive</b> environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to <b>slide gradually into programming</b>, when the language and system aspects would become more important.&quot; John Chambers</p></li>
 </ul>
 
   </article>
@@ -213,7 +215,7 @@ x
 
 <slide class="" id="slide-11" style="background:;">
   <hgroup>
-    <h2>Vectors cont.</h2>
+    <h2>Vectors</h2>
   </hgroup>
   <article data-timings="">
     <p>R has five basic classes of objects:</p>
@@ -271,13 +273,13 @@ And...<br></li>
 x
 </code></pre>
 
-<pre><code>## [1] 19  3 11  5 13
+<pre><code>## [1] 18  8 19 15 17
 </code></pre>
 
 <pre><code class="r">x - 4
 </code></pre>
 
-<pre><code>## [1] 15 -1  7  1  9
+<pre><code>## [1] 14  4 15 11 13
 </code></pre>
 
   </article>
@@ -289,7 +291,7 @@ x
     <h2>Vector Math</h2>
   </hgroup>
   <article data-timings="">
-    <p>The previous example might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model</p>
+    <p>The previous example is a contrived example, but consider if you want to normalize data in preparation for fitting a regression model</p>
 
 <pre><code class="r">#center the data by subtracting the mean
 xc&lt;-x-mean(x)
@@ -300,7 +302,7 @@ xn&lt;-xc/sd(x)
 xn
 </code></pre>
 
-<pre><code>## [1]  1.3709893 -1.1217185  0.1246354 -0.8101300  0.4362239
+<pre><code>## [1]  0.59182689 -1.68443038  0.81945262 -0.09105029  0.36420116
 </code></pre>
 
   </article>
@@ -710,6 +712,19 @@ mean(x)
 <p>email me: <a href="mailto:eagroom@yahoo.com">eagroom@yahoo.com</a><br>
 find this presentation on github at: <a href="https://github.com/eagroom/IntroToRPresentation">https://github.com/eagroom/IntroToRPresentation</a>  </p>
 
+<p><b>What Will you do with R?</b></p>
+
+<ul>
+<li>Google uses R to calculate the ROI on advertising campaigns.</li>
+<li>Ford uses R to improve the design of its vehicles.</li>
+<li>Twitter uses R to monitor user experience.</li>
+<li>The US National Weather Service uses R to predict severe flooding.</li>
+<li>The Rockefeller Institute of Government uses R to develop models for simulating the finances of public pension funds.</li>
+<li>The Human Rights Data Analysis Group uses R to quantify the impact of war.</li>
+<li>R is used frequently by The New York Times to create infographics and interactive data journalism applications.
+<a href="http://opensource.com/business/14/12/r-open-source-language-data-science">Source</a></li>
+</ul>
+
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -726,13 +741,13 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Why this is important'>
+        data-slide=2 title='Why data analytics is important'>
          2
       </a>
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Why Cont.'>
+        data-slide=3 title='Why this is important'>
          3
       </a>
     </li>
@@ -744,7 +759,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='What is R Cont.'>
+        data-slide=5 title='A little history'>
          5
       </a>
     </li>
@@ -780,7 +795,7 @@ find this presentation on github at: <a href="https://github.com/eagroom/IntroTo
     </li>
     <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=11 title='Vectors cont.'>
+        data-slide=11 title='Vectors'>
          11
       </a>
     </li>

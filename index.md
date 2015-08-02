@@ -24,29 +24,31 @@ find this presentation on github at: [https://github.com/eagroom/IntroToRPresent
 
 --- 
 
-## Why this is important
+## Why data analytics is important
 
 Consider the case study presented by Keith Baggerly [The Anil Potti Story](http://videolectures.net/cancerbioinformatics2010_baggerly_irrh/)
 
 Article: "[Genomic signatures to guide the use of chemotherapeutics.](http://www.nature.com/nm/journal/v12/n11/abs/nm1491.html)"
-  Auther: Potti et al (2006), 
+  Author: Potti et al (2006), 
   Magazine: Nature Medicine, 12:1294-1300
 
-The idea is they developed a tool that can be used to predict weather a patient will respond to chemotherapies by knowing what drugs are most effective against which cells.  
+They developed a statistical tool that can be used to predict weather a patient will respond to chemotherapies by knowing what drugs are most effective against which cells.  
 
 <b>Amazing!</b>
 
 ---
 
-## Why Cont.
+## Why this is important
 
 This was very exciting to the MD Anderson Cancer Center.  They asked Baggerly's group to evaluate this new tool.
 
-What Baggerly found was poor data analysis as several steps along the way.  Easy things like miss labeling of data.  This caused patients to not get the drugs that it is predicted their cancer would respond best to!
+What Baggerly found was poor data analysis at several steps along the way.  Easy things like miss labeling of data and an off by one row error.  
+
+This caused patient's in the clinical trial to not get the drugs that it was predicted their cancer would respond best to! The clinical trial was stopped in it tracks.
 
 "Intuition in high through put biology is poor" -Keith Baggerly 
 
-In other words... we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.
+In other words... (I believe) we need impartial engineers who care deeply about the process and the math the data is curated through so that doctors, geneticist, ect. can learn factual things from the data and draw accurate conclusions.
 
 ---
 
@@ -54,21 +56,21 @@ In other words... we need impartial engineers who care deeply about the process 
 
 * R is an <b>interactive</b> system for statistical computation and graphics. It consists of a language `plus a run-time environment with graphics`, a debugger, and the ability to run programs stored in script files. It is open source.
 
+* Runs on almost any standard computing platform/OS (even on the PlayStation 3)
+
+* Frequent releases (annual + bugfix releases); active development.
+
+---
+
+## A little history
+
+* In 1991 Ross Ihaka and Robert Gentleman created R
+
 > * R is a dialect of the S language.
 
 > * S is a language that was developed by John Chambers and others at Bell Labs. It was initiated in 1976 as an internal statistical analysis environment-originally implemented as Fortran libraries. (In 1988 the system was rewritten in C)
 
 > * "[W]e wanted users to be able to begin in an <b>interactive</b> environment, where they did not consciously think of themselves as programming. Then as their needs became clearer and their sophistication increased, they should be able to <b>slide gradually into programming</b>, when the language and system aspects would become more important." John Chambers
-
----
-
-## What is R Cont.
-
-* In 1991 Ross Ihaka and Robert Gentleman created R
-
-* Runs on almost any standard computing platform/OS (even on the PlayStation 3)
-
-* Frequent releases (annual + bugfix releases); active development.
 
 ---
 
@@ -139,7 +141,7 @@ The simplest structure in R is the numeric vector. The number in brackets denote
 
 ---
 
-## Vectors cont.
+## Vectors
 
 R has five basic classes of objects:
 * character
@@ -192,7 +194,7 @@ x
 ```
 
 ```
-## [1] 19  3 11  5 13
+## [1] 18  8 19 15 17
 ```
 
 ```r
@@ -200,14 +202,14 @@ x - 4
 ```
 
 ```
-## [1] 15 -1  7  1  9
+## [1] 14  4 15 11 13
 ```
 
 ---
 
 ## Vector Math
 
-The previous example might seem contrived example, but consider if you want to normalize data in preparation for fitting a regression model
+The previous example is a contrived example, but consider if you want to normalize data in preparation for fitting a regression model
 
 
 ```r
@@ -221,7 +223,7 @@ xn
 ```
 
 ```
-## [1]  1.3709893 -1.1217185  0.1246354 -0.8101300  0.4362239
+## [1]  0.59182689 -1.68443038  0.81945262 -0.09105029  0.36420116
 ```
 
 ---
@@ -548,3 +550,13 @@ Feel free to contact me and I will help if I can!
 
 email me: eagroom@yahoo.com  
 find this presentation on github at: [https://github.com/eagroom/IntroToRPresentation] (https://github.com/eagroom/IntroToRPresentation)  
+
+<b>What Will you do with R?</b>
+* Google uses R to calculate the ROI on advertising campaigns.
+* Ford uses R to improve the design of its vehicles.
+* Twitter uses R to monitor user experience.
+* The US National Weather Service uses R to predict severe flooding.
+* The Rockefeller Institute of Government uses R to develop models for simulating the finances of public pension funds.
+* The Human Rights Data Analysis Group uses R to quantify the impact of war.
+* R is used frequently by The New York Times to create infographics and interactive data journalism applications.
+[Source](http://opensource.com/business/14/12/r-open-source-language-data-science)

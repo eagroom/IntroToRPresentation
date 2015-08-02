@@ -19,7 +19,7 @@ levels(surveyResults$Age)
 # -this package has A set of tools that solves a common set of problems
 # packages can be thought of as libraries
 ?
-#install.packages("plyr") #don't actually do
+#install.packages("plyr") #don't actually do durrnig demo because it takes a second to do
 library(plyr)
 
 ?ddply
@@ -28,6 +28,7 @@ ddply(surveyResults, "Age", summarise, num = length(Age))
 
 
 #or as i found out you can just do this: count(surveyResults$Age)
+  #Count the number of occurences.
 
 data<-ddply(surveyResults, "Age", summarise, num = length(Age))
 barplot(data$num, names.arg=data$Age)
