@@ -130,7 +130,7 @@ x
 
 Notice how X prints out : [1] 10
 
-The simplest structure in R is the numeric vector. The number in brackets denotes the number of items in the vector.  
+The simplest structure in R is the numeric vector. The number in brackets represents the position of the first item on the line in the vector.  
 
 ---
 
