@@ -194,7 +194,7 @@ x
 ```
 
 ```
-## [1] 17  5  7  3  9
+## [1]  8 18  6 17  3
 ```
 
 ```r
@@ -202,7 +202,7 @@ x - 4
 ```
 
 ```
-## [1] 13  1  3 -1  5
+## [1]  4 14  2 13 -1
 ```
 
 ---
@@ -223,7 +223,7 @@ xn
 ```
 
 ```
-## [1]  1.6285131 -0.5921866 -0.2220700 -0.9623032  0.1480466
+## [1] -0.3565842  1.1291834 -0.6537378  0.9806067 -1.0994681
 ```
 
 ---
@@ -401,7 +401,7 @@ Perfect!  That matches the summary value of 20.09
 
 > * They can be equated to libraries in .Net
 
-> * There are currently packages available on the cran 6,871
+> * There are currently packages available on the cran 6,968 (and growing every day)
 
 > * first time you access a package you need to install it: install.packages("packageName")
 
@@ -490,7 +490,7 @@ looping is great, but R is an interactive language, multi-line loops in the cons
 To the rescue... the applies!
 
 * lapply(): Loop over a list and evaluate a function on each element  
-* sapply(): Same as lapply but try to simplify the result  
+* sapply(): Same as lapply but tries to simplify the result  
 * apply(): Apply a function over the margins of an array  
 * tapply(): Apply a function over subsets of a vector  
 * mapply(): Multivariate version of lapply  
@@ -525,6 +525,19 @@ The search list can be found by using the `search` function.
 
 ---
 
+## Unit Testing in R
+
+There are a couple of packages that support unit testing your R code
+* [RUnit](https://cran.r-project.org/web/packages/RUnit/index.html)
+* [scriptests](https://cran.r-project.org/web/packages/scriptests/index.html)
+* [svUnit](https://cran.r-project.org/web/packages/svUnit/index.html)
+* [testthat](https://cran.r-project.org/web/packages/testthat/index.html) and [testthatsomemore](https://cran.r-project.org/web/packages/testthatsomemore/index.html)
+* [unittest](https://cran.r-project.org/web/packages/unittest/index.html)
+
+Demo of RUnit
+
+---
+
 ## Summary
 
  "As you might be aware, R language is an open-source language for programmers, and the language is the product of collaborative evolution from a combination of brilliant minds too numerous to count. Maybe the best result of this is that R Language compilers have been designed keeping a newbie programmer in mind, which makes it an easy language to adapt. However, numerous minds bring numerous differences as well..."
@@ -534,6 +547,8 @@ The search list can be found by using the `search` function.
 ---
 
 ## Want to get started?
+
+Check out Jason Groom's presentation: <b>What is Data Science Anyway?</b> on <b>Tuesday</b> at <b>1pm</b> in marula
 
 1. [Install R binaries from the CRAN: http://cran.r-project.org](http://cran.r-project.org/)
 2. [Install RStudio] (http://www.rstudio.com/)

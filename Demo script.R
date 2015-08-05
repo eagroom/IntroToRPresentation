@@ -1,17 +1,14 @@
-#same as library(plyr) but returns a bool so you cna install it if its not
-#if (!require("plyr")) { 
-#  install.packages("plyr")
-#  require("plyr")
-#}
+#same as library(plyr) but returns a bool so you can install the package it if its not
+if (!require("plyr")) { 
+  install.packages("plyr")
+  require("plyr")
+}
 
-main <- function(){
-setwd("C:\\Users\\Elizabeth\\Documents\\IntroToR\\IntroToRPresentation")
-surveyResults<-read.csv("Full Results - Stack Overflow Developer Survey - 2015.csv")
+myFunction <- function(){
+  setwd("C:\\Users\\Elizabeth\\Documents\\IntroToR\\IntroToRPresentation")
+  surveyResults<-read.csv("Full Results - Stack Overflow Developer Survey - 2015.csv")
 
-#maybe show memory
-
-print(countriesOfOver60(surveyResults))
-
+  print(countriesOfOver60(surveyResults))
 }
 
 countriesOfOver60 <- function(fulldataFrame){
