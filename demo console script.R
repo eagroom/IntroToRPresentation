@@ -1,5 +1,5 @@
 #Demo
-setwd("C:\\Users\\Elizabeth\\Documents\\IntroToR\\IntroToRPresentation")
+setwd("C:\\Users\\Elizabeth\\Documents\\GitHub\\IntroToRPresentation")
 #getwd returns an absolute filepath representing the current working directory of the R process; 
 #  setwd(dir) is used to set the working directory to dir.
 
@@ -19,7 +19,7 @@ levels(surveyResults$Age)
 # -this package has A set of tools that solves a common set of problems
 # packages can be thought of as libraries
 ?
-#install.packages("plyr") #don't actually do durrnig demo because it takes a second to do
+#install.packages("plyr") #don't actually do durring demo because it takes a second to do
 library(plyr)
 
 ?ddply

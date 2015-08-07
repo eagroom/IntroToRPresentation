@@ -5,7 +5,7 @@ if (!require("plyr")) {
 }
 
 myFunction <- function(){
-  setwd("C:\\Users\\Elizabeth\\Documents\\IntroToR\\IntroToRPresentation")
+  setwd("C:\\Users\\Elizabeth\\Documents\\GitHub\\IntroToRPresentation")
   surveyResults<-read.csv("Full Results - Stack Overflow Developer Survey - 2015.csv")
 
   print(countriesOfOver60(surveyResults))

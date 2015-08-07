@@ -12,6 +12,11 @@ knit        : slidify::knit2slides
 ---
 
 
+![Image](sponsors.png)
+
+
+---
+
 ## About me
 
 Elizabeth Groom
@@ -194,7 +199,7 @@ x
 ```
 
 ```
-## [1]  8 18  6 17  3
+## [1]  5 19  8 10  4
 ```
 
 ```r
@@ -202,7 +207,7 @@ x - 4
 ```
 
 ```
-## [1]  4 14  2 13 -1
+## [1]  1 15  4  6  0
 ```
 
 ---
@@ -223,7 +228,7 @@ xn
 ```
 
 ```
-## [1] -0.3565842  1.1291834 -0.6537378  0.9806067 -1.0994681
+## [1] -0.7029350  1.6401817 -0.2008386  0.1338924 -0.8703005
 ```
 
 ---
@@ -415,7 +420,7 @@ Perfect!  That matches the summary value of 20.09
 
 * When a value in a column is blank.
 * We can equate them to null values.
-* Us the function is.na(vector) to find the na's
+* Use the function is.na(vector) to find the na's
 * is.na returns a Boolean vector of true and false for if the values is na or not
 * can use sum to get a count of na's because true = 1 and false = 0
 
